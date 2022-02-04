@@ -1,0 +1,37 @@
+{
+  "name": "ResearchOrSwim_JS_Project",
+  "version": "1.0.0",
+  "description": "**Background:**",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swusteven/ResearchOrSwim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swusteven/ResearchOrSwim/issues"
+  },
+  "homepage": "https://github.com/swusteven/ResearchOrSwim#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.21.0",
+    "css-loader": "^6.6.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

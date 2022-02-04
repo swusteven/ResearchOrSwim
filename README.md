@@ -52,7 +52,6 @@ https://wireframe.cc/Rc4xee
 - **Iexcloud** - for stock data API for historical stock data, including price, analyst rating and target price and earnings.
 - **Vanilla Javascript** for computing logics for Recommendations.
 - **CSS** for styling.
-- **Rails** - framework for building this dashboard.
 - **Webpack** for bundle js files.
 - **AJAX**  update contents without refreshing the browser.
 
