@@ -62,8 +62,8 @@ https://wireframe.cc/Rc4xee
 **Implementation Timeline**
 
 - Friday Afternoon & Weekend: 
-    1. Set up project. 
-    2. Get D3 show up and IEXcloud connected and able to retrieve data. 
+    1. ~~Set up project.~~ 
+    2. ~~Get D3 show up and IEXcloud connected and able to retrieve data.~~ 
     3. Complete coding the input form and header.
     4. Complete high-level project plan and logics.
     5. Deep dive into D3 and IEXcloud API.
