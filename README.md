@@ -6,7 +6,7 @@ ReserchOrSwim is a stock investing analytic dashboard based on momemtum and fund
 
 In addition, based on data that used to construct the aforementioned charts, it also performs passed/failed analysis and recommend a 'buy' only if it passed all test levels.
 
-This dashboard provides great benefits to investors who implement ivestment strategy strictly based on defined rules, rather than sentiments. In addition, this dashboard provides all three critical investment principles in one place. This makes research as simple as just one click away. 
+This dashboard provides great benefits to investors who implement investment strategies strictly based on defined rules, rather than sentiments. In addition, this dashboard makes research as simple as just one click away as the key criteria are all in one dashboard.
 
 ---
 
