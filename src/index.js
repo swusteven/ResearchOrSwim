@@ -11,9 +11,10 @@ import "./styles/index.css"
     //retrieve button event handler.
     function makeApiCalls() {   
         const ticker = document.querySelector("#ticker-symbol").value;
-        new Earnings(ticker);
-        new HistoricalPrices(ticker);
-        new TargetPrices(ticker);
+        const earning = new Earnings(ticker);      
+        debugger
+        // new HistoricalPrices(ticker);
+        // new TargetPrices(ticker);
     }
 
 
