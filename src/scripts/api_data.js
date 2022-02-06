@@ -9,7 +9,8 @@ const ApiData = console.log("this is the api_data.js file")
 
 // fetch(`${apiURL}${endPoint}&token=${token}`)
 //     .then(res => res.json())
-//     .then(data => showData(data.financials))
+//     .then(data => console.log(data));
+//     // .then(data => showData(data.financials))
 
 
 // function showData(data){
@@ -23,27 +24,41 @@ const ApiData = console.log("this is the api_data.js file")
 // }
 
 
+//CompanyName ---------IEXcloud endpoint 
+const apiURL = "https://sandbox.iexapis.com/"
+const endPoint = "stable/stock/GS/company"
+const token = "Tpk_b837b391ec71490ebdc914ca52df4873"
+ 
+fetch(`${apiURL}${endPoint}?token=${token}`)
+    .then(res => res.json())
+    .then(data => displayCompanyName(data.companyName));
+
+function displayCompanyName(data){
+    const companyName = document.querySelector("#companyName");
+    companyName.innerText = data;
+}
+
 
 //Historical Closing -----------
-const apiURL = "https://finnhub.io/api/v1";
-const token = "sandbox_c7vfjqiad3i9ikp81lg0"
-//--- change this only
-const endPoint = "/stock/candle?symbol=AAPL&resolution=D&from=1614644236&to=1643674636"
+// const apiURL = "https://finnhub.io/api/v1";
+// const token = "sandbox_c7vfjqiad3i9ikp81lg0"
+// //--- change this only
+// const endPoint = "/stock/candle?symbol=AAPL&resolution=D&from=1614644236&to=1643674636"
 
-fetch(`${apiURL}${endPoint}&token=${token}`)
-    .then(res => res.json())
-    // .then(data => console.log(data));
-    .then(data => showData(data))
+// fetch(`${apiURL}${endPoint}&token=${token}`)
+//     .then(res => res.json())
+//     // .then(data => console.log(data));
+//     .then(data => showData(data))
 
 
-function showData(data){
-    const el = document.querySelector(".test");
-    for (let i = 0; i < data.c.length; i++) {
-        const newLi = document.createElement("li");        
-        newLi.innerText = `Date: ${data.t[i]} - ${data.c[i]}`;    // t is date and c is closing price
-        el.appendChild(newLi);
-    }
-}
+// function showData(data){
+//     const el = document.querySelector(".test");
+//     for (let i = 0; i < data.c.length; i++) {
+//         const newLi = document.createElement("li");        
+//         newLi.innerText = `Date: ${data.t[i]} - ${data.c[i]}`;    // t is date and c is closing price
+//         el.appendChild(newLi);
+//     }
+// }
 
 
 export default ApiData

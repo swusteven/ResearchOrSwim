@@ -4,5 +4,3 @@ import "./styles/index.css"
 import * as d3 from 'd3'
 
 console.log("this is the index.js file")
-
-
