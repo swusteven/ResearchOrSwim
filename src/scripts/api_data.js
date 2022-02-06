@@ -31,12 +31,7 @@ const token = "Tpk_b837b391ec71490ebdc914ca52df4873"
  
 fetch(`${apiURL}${endPoint}?token=${token}`)
     .then(res => res.json())
-    .then(data => displayCompanyName(data.companyName));
-
-function displayCompanyName(data){
-    const companyName = document.querySelector("#companyName");
-    companyName.innerText = data;
-}
+    // .then(data => displayCompanyName(data.companyName));
 
 
 //Historical Closing -----------

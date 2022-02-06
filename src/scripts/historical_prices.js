@@ -1,4 +1,14 @@
-const lineChart = console.log("this is from the line_chart.js file")
+class HistoricalPrices  {
+    constructor(ticker){
+        
+    }
+    instanceMethod(){
+        // ...do something specific to an instance
+    }
+    static classMethod(){
+        // ...logic not specific to an instance
+    }
+}
 
 document.addEventListener("DOMContentLoaded", startD3)
 
@@ -18,4 +28,4 @@ function startD3(){
 }
 
 
-export default lineChart;
+export default HistoricalPrices;
