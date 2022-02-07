@@ -1,3 +1,4 @@
+import earningChart from "./draw_charts/earning_chart";
 
 const ApiData = console.log("this is the api_data.js file")
 

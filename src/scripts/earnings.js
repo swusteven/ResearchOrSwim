@@ -13,6 +13,7 @@ class Earnings  {
         let that = this; 
           
         fetch(`${apiURL}${endPoint}&token=${token}`)
+        
             .then(res => res.json())
             .then(data => 
                 data.financials.forEach((element) => {
