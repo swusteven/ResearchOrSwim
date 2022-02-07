@@ -40,9 +40,9 @@ const earningChart = () => {
 
 
     d3.select("#earnings").append('svg')
-        .attr('height', height)
+        .attr('height', height + 5)    // + 5 is the margin to push it up
         .attr('width', width)
-        .append('g')
+        .append('g')      //add this grouping for the purpuse of X and Y Guides
         .style('background', '#C9D7D6')
        .selectAll('rect').data(revenue)
         .enter().append('rect')
