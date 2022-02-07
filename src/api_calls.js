@@ -33,18 +33,10 @@ const apiCalls  = async ()=>{
             responses[0].json()
                     .then(data => earningChart(data.financials));  //create earning chart
                     
-            
             //--History data goes here
-
-
             // -- Target Price data goes here
-
-
             // -- Analaysis data goes here
-
         })
 }
-
-
 
 export default apiCalls
