@@ -1,8 +1,14 @@
-const earningChart = () => {
-
-    const revenue = [12, 78, 45, 15];
-    const year = [2018, 2019, 2020, 2021];
-
+const earningChart = (data) => {
+debugger
+    const revenue = [];
+    const year = [];
+    
+    for (let i = 0; i < 4; i++) {
+        revenue.push(data[i].revenue); 
+        year.push(data[i].year); 
+    }
+        
+    
     const height = 400,
           width = 600,
           barWidth = 50,
@@ -58,9 +64,7 @@ const earningChart = () => {
                 .attr('transform', 'translate(20,0)')
                 .call(yAxisTicks)
     
-    
 };
 
-earningChart()
 
 export default earningChart
