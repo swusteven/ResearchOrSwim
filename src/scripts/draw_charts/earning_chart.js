@@ -1,73 +1,69 @@
 const earningChart = (data) => {
-    // const revenue = [];
-    // const year = [];
-    
-    // for (let i = 5; i >=0; i--) {
-    //     revenue.push(data[i].revenue); 
-    //     year.push(data[i].year); 
-    // }   
-
-
-
-    const revenue = [16,25,40,550,16,25,40,550];
+    const revenue = [];
     const year = [];
     
-    for (let i = 1; i < revenue.length + 2; i++) {
-        year.push(new Date(`2/${i}/2022`))        
-    };  
+    for (let i = 10; i >=0; i--) {
+        revenue.push(data[i].revenue); 
+        year.push(data[i].year); 
+    }   
+
+
+    // const revenue = [160, 25, 40, 550, 16, 25, 40, 550, 16, 25, 40, 550];
+    // const year = [];
+    
+    // for (let i = 2015; year.length < revenue.length; i++) {
+    //          year.push(i)     
+    // };  
 
     
-    const margin = {top: 0, right: 0 , bottom: 30, left: 30},
-          height = 400 - margin.top - margin.bottom,
-          width = 600 - margin.left - margin.right,
-          barWidth = 50,
-          barOffset = 5;
-
-    //x and y scales for the bars
-    const yScale = d3.scaleLinear()
-                        .domain([0, d3.max(revenue)])
-                        .range([0, height])
+    const svg = d3.select("#earnings").append('svg')
+                .attr('width', 600)
+                .attr('height', 500)
+                // .style('background', '#C9D7D6'),
+                
+          const margin = 200,
+                width = svg.attr('width') - margin,
+                height = svg.attr('height') - margin;
 
     const xScale = d3.scaleBand()
-                        .domain(revenue)
-                        .padding(.2)
-                        .range([0, width])   
-                     
-                     
-    //x and y scales for the guide
-    const yAxisValues = d3.scaleLinear()
-                            .domain([0, d3.max(revenue)])
-                            .range([height, 0])
+                    .range([0, width])
+                    .padding(0.3)
+                    .domain(year)
 
-    const yAxisTicks = d3.axisLeft(yAxisValues)
-                            .ticks(10)
+    const yScale = d3.scaleLinear()
+                    .range([height, 0])
+                    .domain([0, d3.max(revenue)])
+
+    const grouped = svg.append('g')
+                        .attr('transform', 'translate(' + 100 + ', '+ 100 +')');
 
 
-    const xAxisValues = d3.scaleTime()
-                            .domain([year[0], year[(year.length -1)]])
-                            .range([0,width])
+    grouped.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(xScale));
 
-    const xAxisTicks = d3.axisBottom(xAxisValues)
-                            .ticks(d3.timeDay.every(1))
+    grouped.append("g")
+         .call(d3.axisLeft(yScale).tickFormat(function(d){
+             return "$" + d;
+         }).ticks(10))
+         .append("text")
+         .attr("y", 6)
+         .attr("dy", "0.71em")
+         .attr("text-anchor", "end")
+         .text("value");
 
-    const chart = 
-    d3.select("#earnings").append('svg')
-        .attr('height', height + margin.top + margin.bottom)    // + 5 is the margin to push it up
-        .attr('width', width + margin.left + margin.right)
-        .append('g')      //add this grouping for the purpuse of X and Y Guides
-        .attr('transform', 'translate('+ margin.left + ', '+ margin.right +')')
-        .style('background', '#C9D7D6')
-    .selectAll('rect').data(revenue)
-        .enter().append('rect')
+    grouped.selectAll(".bar")
+        .data(revenue)
+        .enter().append("rect")
+        .attr('class', 'bar')
         .style('fill', '#C61C6F')
-        // .attr('y', (d)=> height - yScale(d))   //moved down to chart.transition. 
-        // .attr('height', (d)=> yScale(d))       //moved down to chart.transition
-        .attr('height', 0)                        //for transition affect, set it to 0 // no show 
-        .attr('y', 0)                             //for transition affect, set it to 0 // no show 
-        .attr('width', (d) => xScale.bandwidth())
-        .attr('x', (d, idx)=> xScale(d) )
+        .attr('x', function(d, i) {return xScale(year[i])})   //takes in year
+        .attr('y', function(d) {return yScale(d)})
+        .attr('width', xScale.bandwidth())
+        .attr('height', function(d) {return height -  yScale(d)})
+        
 
-        .on('mouseover', function(d){
+      .on('mouseover', function(d){
             d3.select(this)
                 .style('opacity', .5)            //or use style('fill'. 'color')
             })
@@ -76,27 +72,28 @@ const earningChart = (data) => {
             d3.select(this)
                  .style('opacity', 1)
         });
-    
-    //transition effect
-    chart.transition()
-        .attr('y', (d)=> height - yScale(d))
-        .attr('height', (d)=> yScale(d))
-        .delay(function(d, idx){
-            return idx * 100;
-        })
+
+   
+
+    svg.append("text")
+        .attr("transform", "translate(100,0)")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("font-size", "24px")
+        .text(`${year[0]} - ${year[year.length -1]} earnings  `)
 
 
-        
-    const yGuide = d3.select("#earnings svg").append('g')
-                .attr('transform', 'translate(20,0)')
-                .call(yAxisTicks)
-        
-    const xGuide = d3.select("#earnings svg").append('g')
-                        .attr('transform', 'translate(20, '+ height +')')
-                        .call(xAxisTicks)
+    // //transition effect
+    // chart.transition()
+    //     .attr('y', (d)=> height - yScale(d))
+    //     .attr('height', (d)=> yScale(d))
+    //     .delay(function(d, idx){
+    //         return idx * 100;
+    //     })
+
 
 };
 
-earningChart();
+// earningChart();
 
 export default earningChart
