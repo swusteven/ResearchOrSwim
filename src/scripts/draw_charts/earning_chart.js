@@ -54,7 +54,7 @@ const earningChart = () => {
 
 
     
-    yGuide = d3.select("#earnings svg").append('g')
+    const yGuide = d3.select("#earnings svg").append('g')
                 .attr('transform', 'translate(20,0)')
                 .call(yAxisTicks)
     
