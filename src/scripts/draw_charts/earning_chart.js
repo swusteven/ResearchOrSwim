@@ -2,7 +2,7 @@ const earningChart = (data) => {
     const revenue = [];
     const year = [];
         
-    for (let i = 10; i >=0; i--) {
+    for (let i = data.length >10 ? 10 : data.length -1; i >=0; i--) {
         revenue.push(data[i].revenue); 
         year.push(data[i].year); 
     }   

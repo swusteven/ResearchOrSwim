@@ -56,19 +56,19 @@ function addAnalystData(data){
    
     d3.selectAll(`.analyst-recommendation-row .strongBuy`)
         .data(data)
-        .html(d=> d.stronBuy)
+        .html(d=> Math.floor(d.stronBuy))
   
     d3.selectAll(`.analyst-recommendation-row .buy`)
         .data(data)
-        .html(d=> d.buy) 
+        .html(d=> Math.floor(d.buy)) 
 
     d3.selectAll(`.analyst-recommendation-row .hold`)
         .data(data)
-        .html(d=> d.hold)
+        .html(d=> Math.floor(d.hold))
     
     d3.selectAll(`.analyst-recommendation-row .sell`)
         .data(data)
-        .html(d=> d.sell)
+        .html(d=> Math.floor(d.sell))
   
 }
 

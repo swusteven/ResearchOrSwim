@@ -90,7 +90,7 @@ function displayAnalytics(results){
 
     //add table header
     d3.select('#analytics-table').append('tr').attr('id', 'analytics-header-tr')
-    d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'category').html('Category');
+    d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'category').html('Analytic Category');
     d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'result').html('Result');
 
     const categories = ['Price Momentum', 'Fundamental', 'Analyst Expectations', 'Overall' ]
@@ -113,8 +113,8 @@ function displayAnalytics(results){
 
     //Overall result
     d3.select('#analytics-table').append('tr').attr('id', "overall-result-row");
-    d3.select('#overall-result-row').append('td').html('Overall');
-    d3.select('#overall-result-row').append('td').html(`${results[2] ? "BUY!" : "DO NOT BUY!!"}`);
+    d3.select('#overall-result-row').append('td').html('Overall').style('font-weight', 'bold').style('background-color','yellow');
+    d3.select('#overall-result-row').append('td').html(`${results[3] ? "BUY!" : "DO NOT BUY!!"}`).style('font-weight', 'bold').style('background-color','yellow');
 
 }
 
