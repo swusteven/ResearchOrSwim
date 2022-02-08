@@ -1,14 +1,13 @@
+console.log('this is from the historical price file')
 const historicalPriceChart = (data) => {
-
-    const closingPrice = [];
-    const date = [];
-
-   
+    console.log(data)
     const consolidateData = [];
 
-    for (let i = 0; i < closingPrice.length; i++) {
-        consolidateData.push({closingPrice: closingPrice[i], date: date[i]})     
+    for (let i = 0; i < data.c.length; i++) {
+        consolidateData.push({closingPrice: Math.floor(data.c[i]), date: convertUnixTime(data.t[i])})     
     }
+
+    console.log(consolidateData)
         
     const margin ={top: 50, right: 50, bottom: 50, left: 50},
           width = 600 - margin.left - margin.right,
@@ -23,7 +22,7 @@ const historicalPriceChart = (data) => {
     d3.select('#historical-price').append('svg')
         .attr('height', height + margin.top + margin.bottom)
         .attr('width', width + margin.left + margin.right)
-        .style('background', '#C9D7D6')
+        // .style('background', '#C9D7D6')
         .append('g')
         .attr('transform', `translate(${margin['left']},  ${margin['top']})`)
 
@@ -97,8 +96,8 @@ const movingAverage = (consolidateDdata, numberOfPricePoints) => {
 
 
 
-historicalPriceChart();
-
-
+function convertUnixTime(unixTime){
+    return new Date(unixTime * 1000).toLocaleString();
+}
 
 export default historicalPriceChart

@@ -3,6 +3,7 @@ console.log('this is from the earning chart file')
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
+    console.log(data)
     
     for (let i = 10; i >=0; i--) {
         revenue.push(data[i].revenue); 
@@ -75,7 +76,6 @@ const earningChart = (data) => {
                  .style('opacity', 1)
         });
 
-   
 
     svg.append("text")
         .attr("transform", "translate(100,0)")
@@ -96,6 +96,5 @@ const earningChart = (data) => {
 
 };
 
-// earningChart();
 
 export default earningChart
