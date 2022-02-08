@@ -1,5 +1,6 @@
 import { create } from "d3";
-import earningChart from "./scripts/draw_charts/earning_chart";
+import earningChart from "./draw_charts/earning_chart";
+import historicalPriceChart from "./draw_charts/historical_price";
 
 
 const apiCalls  = async ()=>{

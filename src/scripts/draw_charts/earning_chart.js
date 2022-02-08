@@ -1,3 +1,5 @@
+console.log('this is from the earning chart file')
+
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
