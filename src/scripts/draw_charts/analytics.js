@@ -1,3 +1,5 @@
+import { drag } from "d3";
+
 const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
     // covert data
     earningData.then(function(earning){
@@ -86,7 +88,34 @@ function displayAnalytics(results){
     const analyst = results[2];
     const overall = results[3];
 
-    d3.selectAll('#analtyics')
+    //add table header
+    d3.select('#analytics-table').append('tr').attr('id', 'analytics-header-tr')
+    d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'category').html('Category');
+    d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'result').html('Result');
+
+    const categories = ['Price Momentum', 'Fundamental', 'Analyst Expectations', 'Overall' ]
+
+    //momemtum
+    d3.select('#analytics-table').append('tr').attr('id', "momentum-row");
+    d3.select('#momentum-row').append('td').html('Price Momentum');
+    d3.select('#momentum-row').append('td').html(`${results[0] ? "Passed" : "Failed"}`);
+    
+    //fundamentals
+    d3.select('#analytics-table').append('tr').attr('id', "fundamentals-row");
+    d3.select('#fundamentals-row').append('td').html('Earnings');
+    d3.select('#fundamentals-row').append('td').html(`${results[1] ? "Passed" : "Failed"}`);
+
+     //analyst expectations
+    d3.select('#analytics-table').append('tr').attr('id', "analyst-row");
+    d3.select('#analyst-row').append('td').html('Analyst Expectations');
+    d3.select('#analyst-row').append('td').html(`${results[2] ? "Passed" : "Failed"}`);
+
+
+    //Overall result
+    d3.select('#analytics-table').append('tr').attr('id', "overall-result-row");
+    d3.select('#overall-result-row').append('td').html('Overall');
+    d3.select('#overall-result-row').append('td').html(`${results[2] ? "BUY!" : "DO NOT BUY!!"}`);
+
 }
 
 
