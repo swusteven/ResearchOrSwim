@@ -1,13 +1,10 @@
 const historicalPriceChart = (data) => {
-    console.log(data)
-    const consolidateData = [];
-
+  const consolidateData = [];
+    
     for (let i = 0; i < data.c.length; i++) {
         consolidateData.push({closingPrice: data.c[i], date: convertUnixTime(data.t[i])})     
     }
-
-    console.log(consolidateData)
-        
+       
     const margin ={top: 30, right: 30, bottom: 30, left: 30},
           width = 600 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
@@ -74,9 +71,8 @@ const historicalPriceChart = (data) => {
             );
 }
 
-
-const movingAverage = (consolidateDdata, numberOfPricePoints) => {
-  return consolidateDdata.map((row, index, total) => {
+function movingAverage(consolidateDdata, numberOfPricePoints){
+   return consolidateDdata.map((row, index, total) => {
     const start = Math.max(0, index - numberOfPricePoints);
     const end = index; 
     const subset = total.slice(start, end + 1);
@@ -89,14 +85,14 @@ const movingAverage = (consolidateDdata, numberOfPricePoints) => {
       date: row.date,
       average: sum / subset.length
     };
-
   });
 };
-
 
 
 function convertUnixTime(unixTime){
     return new Date(unixTime * 1000)
 }
+
+
 
 export default historicalPriceChart

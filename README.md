@@ -35,7 +35,7 @@ Recommendation logic:
 - Company Earnings:
     1. passed only if earning is positive and YoY growth in the last two years is 10% or more.
 - Analyst Recommendation:
-    1. passed only if 75% recommended Strong Buy or Buy.
+    1. passed only if 50% recommended Strong Buy or Buy.
 - Analytical:
     1. passed only if all three tests above received a pass. 
 

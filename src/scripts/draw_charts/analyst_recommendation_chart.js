@@ -5,8 +5,7 @@ const analystRecommendationChart = (data) => {
         consolidatedData.push({stronBuy: data[i].strongBuy, buy: data[i].buy, hold: data[i].hold, sell: data[i].sell, period: data[i].period })
         addRow();
     }
-    console.log((consolidatedData))
-       
+           
     addAnalystData(consolidatedData);
       
 }

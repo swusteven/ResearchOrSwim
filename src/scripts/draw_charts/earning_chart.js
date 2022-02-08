@@ -1,15 +1,11 @@
-console.log('this is from the earning chart file')
-
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
-    console.log(data)
-    
+        
     for (let i = 10; i >=0; i--) {
         revenue.push(data[i].revenue); 
         year.push(data[i].year); 
     }   
-
     
     const svg = d3.select("#earnings").append('svg')
                 .attr('width', 600)

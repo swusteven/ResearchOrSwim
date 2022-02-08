@@ -40,23 +40,19 @@ const apiCalls  = async ()=>{
                     .then((data) => cName.innerHTML = data.companyName); //update companyName
 
             //--Earning data
-            responses[1].json()
-                    .then(data => earningChart(data.financials));  //create earning chart
+            const earningData = responses[1].json()
+                    earningData.then(data => earningChart(data.financials));  //create earning chart
                     
             //--1-year historical price data
-            responses[2].json()
-                    .then(data => historicalPriceChart(data));  //create earning chart
+            const historicalPriceData = responses[2].json()
+                    historicalPriceData.then(data => historicalPriceChart(data));  //create earning chart
 
             // -- Analyst Recommendation
-             responses[3].json()
-                    .then(data => analystRecommendationChart(data));
+             const analystRecommendationData = responses[3].json()
+                    analystRecommendationData.then(data => analystRecommendationChart(data));
 
             // -- analytics
-                const earningData = responses[1].json().financials;
-                const historicalPriceData = responses[2].json();
-                const analystRecommendation = responses[3].json();
-                analytics(earningData, historicalPriceData, analystRecommendation);
-            })
+             analytics(earningData, historicalPriceData, analystRecommendationData)   
         })
 }
 

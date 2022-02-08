@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import "./styles/index.css"
+import Util from './scripts/util';
 import apiCalls from './scripts/api_calls'
 
 
