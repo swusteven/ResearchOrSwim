@@ -10,14 +10,6 @@ const earningChart = (data) => {
         year.push(data[i].year); 
     }   
 
-
-    // const revenue = [160, 25, 40, 550, 16, 25, 40, 550, 16, 25, 40, 550];
-    // const year = [];
-    
-    // for (let i = 2015; year.length < revenue.length; i++) {
-    //          year.push(i)     
-    // };  
-
     
     const svg = d3.select("#earnings").append('svg')
                 .attr('width', 600)
@@ -78,10 +70,10 @@ const earningChart = (data) => {
 
 
     svg.append("text")
-        .attr("transform", "translate(100,0)")
+        .attr("transform", "translate(150,0)")
         .attr("x", 50)
         .attr("y", 50)
-        .attr("font-size", "24px")
+        .attr("font-size", "18px")
         .text(`${year[0]} - ${year[year.length -1]} earnings  `)
 
 

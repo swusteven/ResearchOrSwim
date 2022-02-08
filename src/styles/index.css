@@ -1,3 +1,33 @@
+.company-lookup{
+    display: flex;
+    justify-content: left;
+}
+
+
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
 .display li{
     list-style: none;
 }
+
+#analyst-recommendation{
+    background-color: cadetblue; 
+}
+
+
+#analyst-recommendation-table{
+    width: 600px;
+    padding: 20px;
+}
+
+
+#analyst-recommendation-table tr{
+    width: 20%;
+}
+
+

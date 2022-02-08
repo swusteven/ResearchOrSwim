@@ -1,15 +1,14 @@
-console.log('this is from the historical price file')
 const historicalPriceChart = (data) => {
     console.log(data)
     const consolidateData = [];
 
     for (let i = 0; i < data.c.length; i++) {
-        consolidateData.push({closingPrice: Math.floor(data.c[i]), date: convertUnixTime(data.t[i])})     
+        consolidateData.push({closingPrice: data.c[i], date: convertUnixTime(data.t[i])})     
     }
 
     console.log(consolidateData)
         
-    const margin ={top: 50, right: 50, bottom: 50, left: 50},
+    const margin ={top: 30, right: 30, bottom: 30, left: 30},
           width = 600 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
 
@@ -97,7 +96,7 @@ const movingAverage = (consolidateDdata, numberOfPricePoints) => {
 
 
 function convertUnixTime(unixTime){
-    return new Date(unixTime * 1000).toLocaleString();
+    return new Date(unixTime * 1000)
 }
 
 export default historicalPriceChart

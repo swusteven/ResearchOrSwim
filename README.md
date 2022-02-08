@@ -29,10 +29,23 @@ In addition, this project will include:
 - List of technologies / libraries / APIs used
 - a production README
 
+Recommendation logic:
+- Price momentum: 
+    1. passed only if price moving average from last 30 days and increasing.
+- Company Earnings:
+    1. passed only if earning is positive and YoY growth in the last two years is 10% or more.
+- Analyst Recommendation:
+    1. passed only if 75% recommended Strong Buy or Buy.
+- Analytical:
+    1. passed only if all three tests above received a pass. 
+
+
+
 ---
 
 **Wireframes**
-![](wireframe.png)
+<img src="./src/images/wireframe.png"   />
+
 https://wireframe.cc/Rc4xee
 
 - The input field is a field where user can enter the ticker symbol for lookup
