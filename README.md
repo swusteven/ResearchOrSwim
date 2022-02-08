@@ -77,13 +77,13 @@ https://wireframe.cc/Rc4xee
 - Friday Afternoon & Weekend: 
     1. ~~Set up project.~~ 
     2. ~~Get D3 show up and IEXcloud connected and able to retrieve data.~~ 
-    3. Complete coding the input form and header.
-    4. Complete high-level project plan and logics.
-    5. Deep dive into D3 and IEXcloud API.
+    3. ~~Complete coding the input form and header.~~
+    4. ~~Complete high-level project plan and logics.~~
+    5. ~~Deep dive into D3 and IEXcloud API.~~
 - Monday:
-    1. Get the line, bar charts, and table show up correctly.
+    1. ~~Get the line, bar charts, and table show up correctly.~~
 - Tuesday: 
-    1. Implemente underlying logic for the Recommendation section.
+    1. ~~Implemente underlying logic for the Recommendation section.~~
 - Wednesday:
     1. CSS and styling.
     2. deployment.

@@ -17,10 +17,12 @@ const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
 
         analystRecommendation.then(function(analyst){
             for (let i = 0; i < analyst.length; i++) {
-                consolidatedAnalystData.push({stronBuy: analyst[i].strongBuy, buy: analyst[i].buy, hold: analyst[i].hold, sell: analyst[i].sell, period: analyst[i].period });
+                consolidatedAnalystData.push({strongBuy: analyst[i].strongBuy, buy: analyst[i].buy, hold: analyst[i].hold, sell: analyst[i].sell, period: analyst[i].period });
             }
 
-        performAnalytics(consolidatedEarningData, consolidatedHistoricalDate, consolidatedAnalystData);
+        const results = performAnalytics(consolidatedEarningData, consolidatedHistoricalDate, consolidatedAnalystData);
+        
+        displayAnalytics(results)    
 
         })
     })
@@ -33,12 +35,10 @@ function performAnalytics(earningData, priceData, analystData){
     const a = momentum(priceData);
     const b = fundamentals(earningData);
     const c = analystRecommendation(analystData);
+    
+    const overall = a && b && c;
 
-    console.log(a);
-    console.log(b);
-    console.log(c);
-
-    return a && b && c;
+    return [a, b, c, overall];
 }
 
 
@@ -60,6 +60,7 @@ function momentum(priceData){
     return last30DaysAverageincreasing
 };
 
+
 function fundamentals(earningData){
     if (earningData.length < 2) return false;
 
@@ -72,20 +73,30 @@ function fundamentals(earningData){
 
 
 function analystRecommendation(analystData){
-    debugger
     const mostRecent = analystData[0];
-    const total = (mostRecent.stronBuy + mostRecent.buy + mostRecent.hold + mostRecent.sell);
+    const total = (mostRecent.strongBuy + mostRecent.buy + mostRecent.hold + mostRecent.sell);
     const buys = (mostRecent.strongBuy + mostRecent.buy);
-    debugger
     return (buys / total) > .5
 }
 
 
+function displayAnalytics(results){
+    const momentum = results[0];
+    const fundamentals = results[1];
+    const analyst = results[2];
+    const overall = results[3];
 
-        
+    d3.selectAll('#analtyics')
+}
+
+
+
+
 function convertUnixTime(unixTime){
     return new Date(unixTime * 1000)
 };
+
+
 
 
 function movingAverage(consolidateDdata, numberOfPricePoints){

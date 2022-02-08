@@ -1,6 +1,8 @@
 const analystRecommendationChart = (data) => {
     const consolidatedData = [];
     
+    addHeader();
+
     for (let i = 0; i < data.length; i++) {
         consolidatedData.push({stronBuy: data[i].strongBuy, buy: data[i].buy, hold: data[i].hold, sell: data[i].sell, period: data[i].period })
         addRow();
@@ -10,51 +12,61 @@ const analystRecommendationChart = (data) => {
       
 }
 
+function addHeader(){
+    const header = d3.select(".analyst-recommendation-table-header")
+
+    header.append('th')
+        .html('Period');
+
+    header.append('th')
+        .html('Strong Buy');
+    
+    header.append('th')
+        .html('Buy');
+    
+    header.append('th')
+        .html('Hold');
+    
+    header.append('th')
+        .html('Sell');
+}
+
 function addRow(){
     const header = ["period", "strongBuy", "buy", "hold", "sell"];
-    d3.selectAll(".analyst-recommendation-data")
-        .style('width', 600)
-        .style('padding', 20)
 
-
-    d3.selectAll(".analyst-recommendation-data")
+    //add one tr
+    d3.selectAll("#analyst-recommendation-table")
         .append("tr")
-        .style('width', 125)
-       
-
+        .attr("class", "analyst-recommendation-row")
+      
+    //within the tr, add 5 td
     for (let i = 0; i < header.length; i++) {             
-        d3.selectAll('.analyst-recommendation-data tr:last-child')
+        d3.selectAll('.analyst-recommendation-row:last-child')
             .append('td')
             .attr('class',`${header[i]}`)
-            .style('width', 600)
         }  
 };
 
 function addAnalystData(data){
   const colName = ["period", "strongBuy", "buy", "hold", "sell"];
-
-  
-    d3.selectAll(`.analyst-recommendation-data .period`)
+ 
+    d3.selectAll(`.analyst-recommendation-row .period`)
         .data(data)
         .html(d=> d.period)
-      
-    
-    d3.selectAll(`.analyst-recommendation-data .strongBuy`)
+   
+    d3.selectAll(`.analyst-recommendation-row .strongBuy`)
         .data(data)
         .html(d=> d.stronBuy)
- 
-     
-    d3.selectAll(`.analyst-recommendation-data .buy`)
+  
+    d3.selectAll(`.analyst-recommendation-row .buy`)
         .data(data)
         .html(d=> d.buy) 
 
-
-    d3.selectAll(`.analyst-recommendation-data .hold`)
+    d3.selectAll(`.analyst-recommendation-row .hold`)
         .data(data)
         .html(d=> d.hold)
-      
-
-    d3.selectAll(`.analyst-recommendation-data .sell`)
+    
+    d3.selectAll(`.analyst-recommendation-row .sell`)
         .data(data)
         .html(d=> d.sell)
   
