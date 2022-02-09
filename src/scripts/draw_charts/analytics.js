@@ -75,6 +75,7 @@ function fundamentals(earningData){
 
 
 function analystRecommendation(analystData){
+    if (analystData.length === 0) alert('Analyst Recommendation is not available for this quote. Please select another one')
     const mostRecent = analystData[0];
     const total = (mostRecent.strongBuy + mostRecent.buy + mostRecent.hold + mostRecent.sell);
     const buys = (mostRecent.strongBuy + mostRecent.buy);

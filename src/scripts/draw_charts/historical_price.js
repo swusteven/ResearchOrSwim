@@ -5,7 +5,7 @@ const historicalPriceChart = (data) => {
         consolidateData.push({closingPrice: data.c[i], date: convertUnixTime(data.t[i])})     
     }
        
-    const margin ={top: 30, right: 30, bottom: 30, left: 30},
+    const margin ={top: 30, right: 30, bottom: 30, left: 0},
           width = 600 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
 
@@ -69,6 +69,15 @@ const historicalPriceChart = (data) => {
                     .y(function(d) { return yScale(d.average) })
                     .curve(d3.curveBasis)
             );
+
+   
+    const companyName = document.querySelector('#companyName').textContent
+    svg.append("text")
+        .attr("transform", "translate(0, 0)")
+        .attr("x", 0)
+        .attr("y", 30)
+        .attr("font-size", "30px")
+        .text(companyName)
 }
 
 function movingAverage(consolidateDdata, numberOfPricePoints){

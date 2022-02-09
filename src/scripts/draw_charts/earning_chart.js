@@ -12,9 +12,9 @@ const earningChart = (data) => {
                 .attr('height', 500)
                 // .style('background', '#C9D7D6'),
                 
-          const margin = 100,
+          const margin = 50,
                 width = svg.attr('width') - margin,
-                height = svg.attr('height') - margin;
+                height = svg.attr('height') - margin - 50;
 
     const xScale = d3.scaleBand()
                     .range([0, width])
@@ -26,7 +26,7 @@ const earningChart = (data) => {
                     .domain([0, d3.max(revenue)])
 
     const grouped = svg.append('g')
-                        .attr('transform', 'translate(' + 50 + ', '+ 50 +')');
+                        .attr('transform', 'translate(' + 60 + ', '+ 50 +')');
 
 
     grouped.append("g")
