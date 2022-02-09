@@ -6,6 +6,9 @@ import analytics from "./draw_charts/analytics";
 
 
 const apiCalls  = async ()=>{
+    removeExistingContents();
+    debugger
+
     const ticker = document.querySelector("#ticker-symbol").value;
  
     //--- Finhub earning endpoint API
@@ -55,5 +58,15 @@ const apiCalls  = async ()=>{
              analytics(earningData, historicalPriceData, analystRecommendationData)   
         })
 }
+
+
+
+function removeExistingContents(){
+      d3.selectAll("#historical-price > svg").remove();
+      d3.selectAll("#earnings > svg").remove();
+      d3.selectAll("#analyst-recommendation-table tr").remove();
+      d3.selectAll("#analytics-table tr").remove();
+}
+
 
 export default apiCalls

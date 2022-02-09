@@ -13,7 +13,7 @@ const analystRecommendationChart = (data) => {
 }
 
 function addHeader(){
-    const header = d3.select(".analyst-recommendation-table-header")
+    const header = d3.select("#analyst-recommendation-table").append('tr').attr('class', 'analyst-recommendation-table-header')
 
     header.append('th')
         .html('Period');
