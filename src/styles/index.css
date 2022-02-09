@@ -82,9 +82,6 @@ nav{
 }
 
 
-
-
-
 .display{
     display: flex;
     flex-wrap: wrap;
@@ -130,16 +127,37 @@ nav{
     padding: 30px
 }
 
-#analytic-banner-ticker{
-    width: 200px;
-}
-
 #analytic-banner{
     display: flex;
+    justify-content: space-evenly;
 }
 
 #anlytic-banner-summary{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly; 
+}
+#anlytic-banner-summary div{
+    padding: 0px 50px 0 50px;
+
     
+}
+
+#analytic-outcome{
+    width: 200px;
+}
+
+#last-price > p, #last-30-days-moving-average > p, #yoy-earning-growth > p, #analyst-buy-percentage > p{
+    color: #8daac6;
+    margin: 0;
+}
+
+#last-price, #last-30-days-moving-average, #yoy-earning-growth, #analyst-buy-percentage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#anlytic-banner-summary div  text{
+    color: lightgreen;
+    text-align: center;
 }

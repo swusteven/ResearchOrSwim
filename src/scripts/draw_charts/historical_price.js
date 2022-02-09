@@ -70,7 +70,7 @@ const historicalPriceChart = (data) => {
                     .curve(d3.curveBasis)
             );
 
-
+    //display companyName
     const companyName = document.querySelector('#companyName').textContent
     svg.append("text")
         .attr("transform", "translate(0, 0)")
@@ -79,6 +79,15 @@ const historicalPriceChart = (data) => {
         .attr("font-size", "30px")
         .attr("fill", "white")
         .text(companyName)
+
+    //display last price
+    const lastPrice = consolidateData[consolidateData.length -1].closingPrice.toFixed(2);
+    d3.select("#last-price").append('text').text(lastPrice);
+
+    //display last 30 days moving average
+    const last30daysMovingaverage = movingAverageData[movingAverageData.length -1].average.toFixed(2);
+    d3.select("#last-30-days-moving-average").append('text').text(last30daysMovingaverage);
+
 }
 
 function movingAverage(consolidateDdata, numberOfPricePoints){
