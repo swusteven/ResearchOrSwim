@@ -7,6 +7,10 @@ body {
   background-color: lightgray;
 }
 
+#ticker-symbol {
+  width: 100px;
+}
+
 .company-lookup {
   display: flex;
   justify-content: left;
