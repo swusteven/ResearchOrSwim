@@ -7,8 +7,7 @@ import analytics from "./draw_charts/analytics";
 
 const apiCalls  = async ()=>{
     removeExistingContents();
-    debugger
-
+ 
     const ticker = document.querySelector("#ticker-symbol").value;
  
     //--- Finhub earning endpoint API
