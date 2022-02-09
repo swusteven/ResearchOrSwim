@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./d3_package/dist/d3.min.js"></script>
     <script src="./dist/main.js" defer="defer"></script>
@@ -15,45 +17,75 @@
         <nav>
             <h1 id="logo">RESEARCH OR SWIM</h1>
             <ul id="nav-links">
-                <li>Instructions and Rules</li>
-                <li>GitHub</li>
-                <li>LinkedIn</li>
+                </i>Instructions and Rules</li>
+                <li><i class="fa fa-github fa-5x"></i></i>GitHub</li>
+                <li><i class="fa fa-linkedin-square" style="font-size:80px"></i>LinkedIn</li>
             </ul>
 
         </nav>
 
         <section class='company-lookup'>
             <form action="#">
-                <label id="ticker-label">Ticker Symbol:  
-                    <input id="ticker-symbol" type="text">
+                <label id="ticker-label">
+                    <input id="ticker-symbol" type="text" Placeholder="Search">
                 </label>
-                <input id="retrieve-button" type="submit" value="Retrieve Analtyic Results">
+                <input id="retrieve-button" type="submit" value="Search">
             </form>
+
             <span id="companyName"></span>
         </section>
 
         
         <section id="analytic-banner">
-             <div id="anlytic-banner-ticker"> Ticker </div>
-             <div> id="analytic results</div>
+            <div id="analytic-banner-ticker"></div> 
+            <div id="anlytic-banner-summary"> 
+                <div id="last-price">
+                    <p>Last-Price</p>
+                </div>
+                    
+                <div id="30-days-moving-average">
+                    <p>30-Days Moving Average</p>
+                </div>
+                    
+
+                <div id="yoy-earning-growth">
+                    <p>YoY Earning Growth(last 2yrs)</p>
+                </div>
+                    
+                <div id="analyst-buy-percentage">
+                    <p>Strong Buy & Buy Sentiment</p>
+                </div>
+
+            </div>
+             
         </section>
 
+
+
         <section class="display">
-
-            <div id="historical-price"></div>
-            
-            <div id="analytics">
-                <table id="analytics-table"></table>
+            <div id='display-left'> 
+                <div class="lables">1-Year Historical Price Chart with 30-days Moving Average</div>
+                    <div id="historical-price"></div>
+                
+                <div class="lables">Year-over-Year Historical Earnings</div>
+                    <div id="earnings"></div>
             </div>
-            
-            <div id="earnings"></div>
-        
-          
 
-            <div id="analyst-recommendation">
-                <div id="analyst-pie-chart"></div>
-                <table id="analyst-recommendation-table"></table>
-            </div>
+
+            
+            <div id="display-right">
+                <div class="lables" id="display-right-analytical-results">Analytical Results</div>
+                    <div id="analytics">
+                        <table id="analytics-table"></table>
+                    </div>
+
+                <div class="lables">Analysts' Recommenations</div>
+                    <div id="analyst-pie-chart"></div>
+
+                    <div id="analyst-recommendation">   
+                        <table id="analyst-recommendation-table"></table>
+                    </div>
+            </div>          
         
         </section>
 

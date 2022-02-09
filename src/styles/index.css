@@ -1,7 +1,8 @@
 
 body{
     background-color: #12161f;
-    font-family: "IBM Plex Sans", sans-serif;
+    /* font-family: "IBM Plex Sans", sans-serif; */
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
     line-height: 1.5;
     color: white;
     display: block;
@@ -12,15 +13,18 @@ main{
     margin: auto;
 }
 
+
+
 #ticker-symbol{
-    left: 50px;
     font-size: 15px;
     border-radius: 15px 0 0 15px;
     border: none;
-    height: 30px;
+    height: 40px;
+    width: 200px;
     outline: none;
     background-color: #152434;
     color: white;
+
 }
 
 #retrieve-button{ 
@@ -29,8 +33,8 @@ main{
     border: none;
     font-size: 15px;
     width: 250;
-    height: 30px;
-    background-color: #ffc107;
+    height: 40px;
+    background-color: #152434;
     color: white;
     font-weight: bold;
     outline: none
@@ -86,33 +90,56 @@ nav{
     flex-wrap: wrap;
 }
 
-.display > div{
-    margin: 20px 0 0 0;
-    border: none;
-    border-radius: 10px;
-    background-color: #152434;
-    width: 50%;
-}
-
-#analyst-recommendation-table tr td, tr.analyst-recommendation-table-header th{
-    padding: 10px;
-}
-
-#analytics-header-tr, .analyst-recommendation-table-header, #analytics-header-tr th, #fundamentals-row td, #momentum-row td, #analyst-row td, #overall-result-row td{
-    text-align: left;
-}
-
-#analytics-header-tr th, #fundamentals-row td, #momentum-row td, #analyst-row td, #overall-result-row td{
-    padding: 10px;
-}
-
-
-
-
-
-#analyst-recommendation{
+#display-left{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    width: 800px;
+}
+
+
+.lables{
+    margin-top: 20px;
+    border-bottom: gray 1px solid;
+    border-radius: 10px 10px 0 0;
+    background-color: #152434;
+    height: 40px;
+    padding: 5px;
+    display: flex;
     align-items: center;
 }
 
+
+#historical-price, #earnings, #analytics, #analyst-pie-chart, #analyst-recommendation{
+    border: none;
+    background-color: #152434;
+}
+
+
+#display-right{   
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+#display-right-analytical-results{
+    margin-bottom: 50px;
+}
+
+#analyst-pie-chart{
+    text-align: center;
+    padding: 30px
+}
+
+#analytic-banner-ticker{
+    width: 200px;
+}
+
+#analytic-banner{
+    display: flex;
+}
+
+#anlytic-banner-summary{
+    display: flex;
+    justify-content: space-between;
+    
+}
