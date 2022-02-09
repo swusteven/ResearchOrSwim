@@ -47,7 +47,7 @@ const earningChart = (data) => {
         .data(revenue)
         .enter().append("rect")
         .attr('class', 'bar')
-        .style('fill', '#C61C6F')
+        .style('fill', '#c61c6f')
         .attr('x', function(d, i) {return xScale(year[i])})   //takes in year
         .attr('y', function(d) {return yScale(d)})
         .attr('width', xScale.bandwidth())
@@ -66,12 +66,12 @@ const earningChart = (data) => {
         ;
 
 
-    svg.append("text")
-        .attr("transform", "translate(150,0)")
-        .attr("x", 50)
-        .attr("y", 50)
-        .attr("font-size", "18px")
-        .text(`${year[0]} - ${year[year.length -1]} earnings  `)
+    // svg.append("text")
+    //     .attr("transform", "translate(150,0)")
+    //     .attr("x", 50)
+    //     .attr("y", 50)
+    //     .attr("font-size", "18px")
+    //     .text(`${year[0]} - ${year[year.length -1]} earnings  `)
 
 
     // //transition effect

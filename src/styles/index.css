@@ -1,8 +1,8 @@
 
 body{
+    
     background-color: #12161f;
-    /* font-family: "IBM Plex Sans", sans-serif; */
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     line-height: 1.5;
     color: white;
     display: block;
@@ -81,6 +81,69 @@ nav{
     background-color: #152434;
 }
 
+#anlytic-banner-summary div  text{
+    color: lightgreen;
+    text-align: center;
+}
+
+#analytic-outcome{
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#analytic-outcome > text{
+    transform: skewY(-10deg);
+    font-size: large;
+    color: lightsalmon;
+
+    background: transparent;
+        border-radius: 90%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        color: lightsalmon;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 30px;
+        margin-right: 5px;
+        text-align: center;
+        border: yellowgreen 6px solid;
+        width: 250px;
+}
+
+
+#analytic-banner{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#anlytic-banner-summary{
+    display: flex;
+    justify-content: space-evenly; 
+}
+#anlytic-banner-summary div{
+    padding: 0px 50px 0 50px;   
+}
+
+#analytic-outcome{
+    width: 200px;
+}
+
+#last-price > p, #last-30-days-moving-average > p, #yoy-earning-growth > p, #analyst-buy-percentage > p{
+    color: #8daac6;
+    margin: 0;
+}
+
+#last-price, #last-30-days-moving-average, #yoy-earning-growth, #analyst-buy-percentage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+
 
 .display{
     display: flex;
@@ -118,77 +181,18 @@ nav{
 }
 
 
-#display-right-analytical-results{
-    margin-bottom: 50px;
-}
-
 #analyst-pie-chart{
     text-align: center;
     padding: 30px
 }
 
-#analytic-banner{
-    display: flex;
-    justify-content: space-evenly;
+#analytics-header-tr > th.category, #analytics-header-tr > th.result{
+    text-align: left;
+}
+#analyst-recommendation-table > tr.analyst-recommendation-table-header{
+    text-align: left;
 }
 
-#anlytic-banner-summary{
-    display: flex;
-    justify-content: space-evenly; 
+#analytics-table tr td, #analytics-header-tr th, #analyst-recommendation-table > tr th, #analyst-recommendation-table > tr td {
+    padding: 10px;
 }
-#anlytic-banner-summary div{
-    padding: 0px 50px 0 50px;
-
-    
-}
-
-#analytic-outcome{
-    width: 200px;
-}
-
-#last-price > p, #last-30-days-moving-average > p, #yoy-earning-growth > p, #analyst-buy-percentage > p{
-    color: #8daac6;
-    margin: 0;
-}
-
-#last-price, #last-30-days-moving-average, #yoy-earning-growth, #analyst-buy-percentage{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-#anlytic-banner-summary div  text{
-    color: lightgreen;
-    text-align: center;
-}
-
-#analytic-outcome{
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-
-}
-
-
-#analytic-outcome > text{
-    transform: skewY(-10deg);
-    font-size: large;
-    color: lightsalmon;
-
-    background: transparent;
-        border-radius: 90%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        color: lightsalmon;
-        display: inline-block;
-        font-weight: bold;
-        line-height: 30px;
-        margin-right: 5px;
-        text-align: center;
-        border: yellowgreen 6px solid;
-        width: 250px;
-}
-
-
-      

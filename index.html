@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./d3_package/dist/d3.min.js"></script>
     <script src="./dist/main.js" defer="defer"></script>
@@ -15,25 +14,30 @@
 <body>
     <main>
         <nav>
-            <h1 id="logo">RESEARCH OR SWIM</h1>
+       
+            <section class='company-lookup'>
+                <form action="#">
+                    <label id="ticker-label">
+                        <input id="ticker-symbol" type="text" Placeholder="Search">
+                    </label>
+                    <input id="retrieve-button" type="submit" value="Search">
+                </form>
+            
+                <span id="companyName"></span>
+            </section>
+
+
+       
             <ul id="nav-links">
+                <i class="fa fa-github fa-3x"></i>
+                <i class="fa fa-linkedin-square" style="font-size:40px"></i>
                 </i>Instructions and Rules</li>
-                <li><i class="fa fa-github fa-5x"></i></i>GitHub</li>
-                <li><i class="fa fa-linkedin-square" style="font-size:80px"></i>LinkedIn</li>
             </ul>
+        <h1 id="logo">RESEARCH OR SWIM</h1>
 
         </nav>
 
-        <section class='company-lookup'>
-            <form action="#">
-                <label id="ticker-label">
-                    <input id="ticker-symbol" type="text" Placeholder="Search">
-                </label>
-                <input id="retrieve-button" type="submit" value="Search">
-            </form>
-
-            <span id="companyName"></span>
-        </section>
+       
 
         
         <section id="analytic-banner">
@@ -95,6 +99,10 @@
     </main>
 
 </body>
+
+<footer>
+    <a href="https://icons8.com/icon/20319/user-manual">User Manual icon by Icons8</a>
+</footer>
 
 </html>
 
