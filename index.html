@@ -11,41 +11,40 @@
 </head>
 
 <body>
-       
+    <main>
+        <nav>
+            <h1>ResearchOrSwim</h1>
+            <!-- <img class="main-title" src="./src/images/logo.png" alt=""> -->
+            <p></p>
+        </nav>
 
-    <nav>
-        <h1>ResearchOrSwim</h1>
-        <!-- <img class="main-title" src="./src/images/logo.png" alt=""> -->
-        <p></p>
-    </nav>
+        <section class='company-lookup'>
+            <form action="#">
+                <label>Ticker Symbol:  
+                    <input id="ticker-symbol" type="text">
+                </label>
+                <input id="retrieve-button" type="submit" value="Retrieve">
+            </form>
+            <span id="companyName"></span>
+        </section>
 
-    <section class='company-lookup'>
-        <form action="#">
-            <label>Ticker Symbol:  
-                <input id="ticker-symbol" type="text">
-            </label>
-            <input id="retrieve-button" type="submit" value="Retrieve">
-        </form>
-        <span id="companyName"></span>
-    </section>
-
-    
-    <section class="display">
-        <div id="historical-price"></div>
         
-        <div id="analyst-recommendation">
-            <table id="analyst-recommendation-table"></table>
-        </div>
+        <section class="display">
+            <div id="historical-price"></div>
+            
+            <div id="analyst-recommendation">
+                <table id="analyst-recommendation-table"></table>
+            </div>
+            
+            <div id="earnings"></div>
         
-        <div id="earnings"></div>
-    
-        <div id="analytics">
-            <table id="analytics-table"></table>
-        </div>
-      
-    </section>
+            <div id="analytics">
+                <table id="analytics-table"></table>
+            </div>
+        
+        </section>
 
-
+    </main>
 
 </body>
 

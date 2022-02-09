@@ -7,9 +7,9 @@ import analytics from "./draw_charts/analytics";
 
 const apiCalls  = async ()=>{
     removeExistingContents();
- 
+        
     const ticker = document.querySelector("#ticker-symbol").value;
-       
+       debugger
     //--- Finhub earning endpoint API
     const apiURL = "https://finnhub.io/api/v1";
     const token = "sandbox_c7vfjqiad3i9ikp81lg0";

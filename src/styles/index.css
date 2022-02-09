@@ -1,7 +1,12 @@
 body{
+    /* background-color: #28292a; */
+}
+
+main{
     width: 1280px;
     margin: auto;
-    background-color: lightgray;
+    /* background-color: black; */
+    border-radius: 15px;
 }
 
 #ticker-symbol{
@@ -14,11 +19,9 @@ body{
     justify-content: left;
 }
 
-
 .display{
     display: flex;
     flex-wrap: wrap;
-    background-color: lightblue;
 }
 
 .display div{
