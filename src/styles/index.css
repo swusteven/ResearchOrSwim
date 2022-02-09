@@ -2,6 +2,25 @@ body{
     /* background-color: #28292a; */
 }
 
+
+nav{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+#nav-links{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#nav-links li{
+    list-style: none;
+}
+
+
 main{
     width: 1280px;
     margin: auto;
@@ -13,6 +32,9 @@ main{
     width: 100px;
 }
 
+#companyName{
+    display: none;
+}
 
 .company-lookup{
     display: flex;
