@@ -6,7 +6,7 @@ const historicalPriceChart = (data) => {
     }
        
     const margin ={top: 30, right: 30, bottom: 30, left: 0},
-          width = 600 - margin.left - margin.right,
+          width = 800 - margin.left - margin.right,
           height = 400 - margin.top - margin.bottom;
 
     const xMin = d3.min(consolidateData, d => d.date),
@@ -82,11 +82,11 @@ const historicalPriceChart = (data) => {
 
     //display last price
     const lastPrice = consolidateData[consolidateData.length -1].closingPrice.toFixed(2);
-    d3.select("#last-price").append('text').text(lastPrice);
+    d3.select("#last-price").append('text').text(`$${lastPrice}`);
 
     //display last 30 days moving average
     const last30daysMovingaverage = movingAverageData[movingAverageData.length -1].average.toFixed(2);
-    d3.select("#last-30-days-moving-average").append('text').text(last30daysMovingaverage);
+    d3.select("#last-30-days-moving-average").append('text').text(`$${last30daysMovingaverage}`);
 
 }
 

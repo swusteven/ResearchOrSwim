@@ -70,6 +70,8 @@ function fundamentals(earningData){
     const previous = earningData[1].revenue; 
     const percent = (((mostRecent - previous) / previous) * 100);
     
+    displayInBannerEarning(percent);
+
     return mostRecent > previous && percent > 10    
 };
 
@@ -79,6 +81,10 @@ function analystRecommendation(analystData){
     const mostRecent = analystData[0];
     const total = (mostRecent.strongBuy + mostRecent.buy + mostRecent.hold + mostRecent.sell);
     const buys = (mostRecent.strongBuy + mostRecent.buy);
+
+    const buysPercentage = (buys / total)
+    displayInBannerAnalyst(buysPercentage);
+
     return (buys / total) > .5
 }
 
@@ -117,9 +123,11 @@ function displayAnalytics(results){
     //Overall result
     d3.select('#analytics-table').append('tr').attr('id', "overall-result-row");
     d3.select('#overall-result-row').append('td').html('Overall').style('font-weight', 'bold');
-    d3.select('#overall-result-row').append('td').html(`${results[3] ? "BUY!" : "DO NOT BUY!!"}`).style('font-weight', 'bold');
-
-  
+    d3.select('#overall-result-row').append('td').html(`${results[3] ? "Passed!" : "Failed"}`).style('font-weight', 'bold');
+    
+    //update analytic-banner
+    displayInBannerOutcome(results[3])
+    
 }
 
 
@@ -147,5 +155,19 @@ function movingAverage(consolidateDdata, numberOfPricePoints){
   });
 };
 
+
+
+function displayInBannerEarning(percent){
+    d3.select("#yoy-earning-growth").append('text').text(percent.toFixed(2));
+}
+
+
+function displayInBannerAnalyst(buys){
+    d3.select("#analyst-buy-percentage").append('text').text(`${buys.toFixed(2) * 100}%`);
+}
+
+function displayInBannerOutcome(outcome){
+    d3.select('#analytic-outcome').append('text').text(`${outcome ? "RECOMMENDED!" : "NOT RECOMMENDED!"}`);
+}    
 
 export default analytics

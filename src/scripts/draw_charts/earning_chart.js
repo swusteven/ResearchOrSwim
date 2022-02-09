@@ -8,8 +8,8 @@ const earningChart = (data) => {
     }   
     
     const svg = d3.select("#earnings").append('svg')
-                .attr('width', 600)
-                .attr('height', 500)
+                .attr('width', 800)
+                .attr('height', 400)
                 // .style('background', '#C9D7D6'),
                 
           const margin = 50,
@@ -81,6 +81,9 @@ const earningChart = (data) => {
     //     .delay(function(d, idx){
     //         return idx * 100;
     //     })
+
+
+
 
 
 };
