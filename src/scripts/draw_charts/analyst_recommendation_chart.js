@@ -8,9 +8,11 @@ const analystRecommendationChart = (data) => {
         addRow();
     }
            
-    addAnalystData(consolidatedData);
-      
+    addAnalystData(consolidatedData);  
 }
+
+
+
 
 function addHeader(){
     d3.select("#analyst-recommendation-table").attr('width', 600);

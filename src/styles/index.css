@@ -26,7 +26,7 @@ body{
 }
 
 #analyst-recommendation-table tr td, tr.analyst-recommendation-table-header th{
-    padding: 20px;
+    padding: 10px;
 }
 
 #analytics-header-tr, .analyst-recommendation-table-header, #analytics-header-tr th, #fundamentals-row td, #momentum-row td, #analyst-row td, #overall-result-row td{
@@ -34,7 +34,7 @@ body{
 }
 
 #analytics-header-tr th, #fundamentals-row td, #momentum-row td, #analyst-row td, #overall-result-row td{
-    padding: 20px;
+    padding: 10px;
 }
 
 
