@@ -2,7 +2,40 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.css ***!
   \*******************************************************************************************************************************************/
 body {
-  /* background-color: #28292a; */
+  background-color: #12161f;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.5;
+  color: white;
+  display: block;
+}
+
+main {
+  width: 1440px;
+  margin: auto;
+}
+
+#ticker-symbol {
+  left: 50px;
+  font-size: 15px;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  height: 30px;
+  outline: none;
+  background-color: #152434;
+  color: white;
+}
+
+#retrieve-button {
+  left: -10;
+  border-radius: 0 15px 15px 0;
+  border: none;
+  font-size: 15px;
+  width: 250;
+  height: 30px;
+  background-color: #ffc107;
+  color: white;
+  font-weight: bold;
+  outline: none;
 }
 
 nav {
@@ -20,13 +53,6 @@ nav {
   list-style: none;
 }
 
-main {
-  width: 1280px;
-  margin: auto;
-  /* background-color: black; */
-  border-radius: 15px;
-}
-
 #ticker-symbol {
   width: 100px;
 }
@@ -40,13 +66,25 @@ main {
   justify-content: left;
 }
 
+#analytic-banner {
+  margin: 20px 0 0 0;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background-color: #152434;
+}
+
 .display {
   display: flex;
   flex-wrap: wrap;
 }
 
-.display div {
-  margin: 20px;
+.display > div {
+  margin: 20px 0 0 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #152434;
+  width: 50%;
 }
 
 #analyst-recommendation-table tr td, tr.analyst-recommendation-table-header th {
@@ -59,6 +97,12 @@ main {
 
 #analytics-header-tr th, #fundamentals-row td, #momentum-row td, #analyst-row td, #overall-result-row td {
   padding: 10px;
+}
+
+#analyst-recommendation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

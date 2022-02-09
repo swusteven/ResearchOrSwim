@@ -64,6 +64,7 @@ function removeExistingContents(){
       d3.selectAll("#earnings > svg").remove();
       d3.selectAll("#analyst-recommendation-table tr").remove();
       d3.selectAll("#analytics-table tr").remove();
+      d3.selectAll("#analyst-pie-chart svg").remove();
 }
 
 

@@ -116,12 +116,11 @@ function displayAnalytics(results){
 
     //Overall result
     d3.select('#analytics-table').append('tr').attr('id', "overall-result-row");
-    d3.select('#overall-result-row').append('td').html('Overall').style('font-weight', 'bold').style('background-color','yellow');
-    d3.select('#overall-result-row').append('td').html(`${results[3] ? "BUY!" : "DO NOT BUY!!"}`).style('font-weight', 'bold').style('background-color','yellow');
+    d3.select('#overall-result-row').append('td').html('Overall').style('font-weight', 'bold');
+    d3.select('#overall-result-row').append('td').html(`${results[3] ? "BUY!" : "DO NOT BUY!!"}`).style('font-weight', 'bold');
 
+  
 }
-
-
 
 
 function convertUnixTime(unixTime){

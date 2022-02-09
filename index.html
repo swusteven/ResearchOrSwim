@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./d3_package/dist/d3.min.js"></script>
     <script src="./dist/main.js" defer="defer"></script>
-    <title>ResearchOrSwim</title>
+    <title>RESEARCH OR SWIM</title>
 </head>
 
 <body>
     <main>
         <nav>
-            <h1>ResearchOrSwim</h1>
+            <h1 id="logo">RESEARCH OR SWIM</h1>
             <ul id="nav-links">
                 <li>Instructions and Rules</li>
                 <li>GitHub</li>
@@ -24,26 +24,35 @@
 
         <section class='company-lookup'>
             <form action="#">
-                <label>Ticker Symbol:  
+                <label id="ticker-label">Ticker Symbol:  
                     <input id="ticker-symbol" type="text">
                 </label>
-                <input id="retrieve-button" type="submit" value="Retrieve">
+                <input id="retrieve-button" type="submit" value="Retrieve Analtyic Results">
             </form>
             <span id="companyName"></span>
         </section>
 
         
+        <section id="analytic-banner">
+             <div id="anlytic-banner-ticker"> Ticker </div>
+             <div> id="analytic results</div>
+        </section>
+
         <section class="display">
+
             <div id="historical-price"></div>
             
-            <div id="analyst-recommendation">
-                <table id="analyst-recommendation-table"></table>
+            <div id="analytics">
+                <table id="analytics-table"></table>
             </div>
             
             <div id="earnings"></div>
         
-            <div id="analytics">
-                <table id="analytics-table"></table>
+          
+
+            <div id="analyst-recommendation">
+                <div id="analyst-pie-chart"></div>
+                <table id="analyst-recommendation-table"></table>
             </div>
         
         </section>

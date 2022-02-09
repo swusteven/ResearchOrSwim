@@ -70,13 +70,14 @@ const historicalPriceChart = (data) => {
                     .curve(d3.curveBasis)
             );
 
-   
+
     const companyName = document.querySelector('#companyName').textContent
     svg.append("text")
         .attr("transform", "translate(0, 0)")
-        .attr("x", 0)
+        .attr("x", 30)
         .attr("y", 30)
         .attr("font-size", "30px")
+        .attr("fill", "white")
         .text(companyName)
 }
 
