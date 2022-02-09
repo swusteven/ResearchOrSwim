@@ -91,7 +91,7 @@ function displayAnalytics(results){
     d3.select("#analytics-table").attr('width', 600);
 
     //add table header
-    d3.select('#analytics-table').append('tr').attr('id', 'analytics-header-tr')
+    d3.select('#analytics-table').append('tr').attr('id', 'analytics-header-tr');
     d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'category').html('Analytic Category');
     d3.select('#analytics-table #analytics-header-tr').append('th').attr('class', 'result').html('Result');
 

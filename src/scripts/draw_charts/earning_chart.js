@@ -12,7 +12,7 @@ const earningChart = (data) => {
                 .attr('height', 500)
                 // .style('background', '#C9D7D6'),
                 
-          const margin = 200,
+          const margin = 100,
                 width = svg.attr('width') - margin,
                 height = svg.attr('height') - margin;
 
@@ -26,7 +26,7 @@ const earningChart = (data) => {
                     .domain([0, d3.max(revenue)])
 
     const grouped = svg.append('g')
-                        .attr('transform', 'translate(' + 100 + ', '+ 100 +')');
+                        .attr('transform', 'translate(' + 50 + ', '+ 50 +')');
 
 
     grouped.append("g")
@@ -53,7 +53,6 @@ const earningChart = (data) => {
         .attr('width', xScale.bandwidth())
         .attr('height', function(d) {return height -  yScale(d)})
         
-
       .on('mouseover', function(d){
             d3.select(this)
                 .style('opacity', .5)            //or use style('fill'. 'color')
@@ -62,7 +61,9 @@ const earningChart = (data) => {
         .on('mouseout', function(d){
             d3.select(this)
                  .style('opacity', 1)
-        });
+        })
+                
+        ;
 
 
     svg.append("text")
