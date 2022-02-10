@@ -4,10 +4,12 @@
 
 ReserchOrSwim is a stock investing analytics dashboard based on price momemtum, earning fundamentals and Wallstreet sentiments. It simplifed and streamlined your investment research process. It's just as simple as just one click away.
 
-
 ---
 
-**Functionality & MVPs:**
+[Checkout ResearchOrSwim and do your investment due diligence painlessly](https://swusteven.github.io/ResearchOrSwim/)
+
+---
+**Functionalities:**
 
 In ReserchOrSwim, users will be able to:
 
@@ -21,9 +23,6 @@ In ReserchOrSwim, users will be able to:
     - Yearly earnings for fundamentals investing.   
     - Wallstreet sentiment based on analysts recommendations.
    
-- links to my Github, and LinkedIn
-
-
 
 **Analytics rules:**
 - Price momentum: 
@@ -36,7 +35,6 @@ In ReserchOrSwim, users will be able to:
 Overall recommendation if all three tests recevived a passed. Otherwise, not recommended to buy the underlying stock.
 
 
-
 ---
 
 **Instructions and User Interactions**
@@ -47,7 +45,6 @@ Overall recommendation if all three tests recevived a passed. Otherwise, not rec
     - Descriptions of the application
     - Investment approches and analytics rules
     - Instruction on how to navigate through the application
-
 
 **User Interactions**
 <img src="./src/images/main_page.png"/>
