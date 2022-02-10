@@ -6,8 +6,8 @@ const historicalPriceChart = (data) => {
     }
        
     const margin ={top: 30, right: 30, bottom: 30, left: 0},
-          width = 800 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+          width = 750 - margin.left - margin.right,
+          height = 350 - margin.top - margin.bottom;
 
     const xMin = d3.min(consolidateData, d => d.date),
           xMax = d3.max(consolidateData, d => d.date),

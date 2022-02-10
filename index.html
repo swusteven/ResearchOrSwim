@@ -38,8 +38,8 @@
             </section>
                 
             <section id='about'>
-                <span>About and Rules</span>
-                <img src="https://img.icons8.com/nolan/64/about.png" />
+                <span id="myBtn">About and Rules</span>
+                <img src="https://img.icons8.com/nolan/64/about.png" />                
             </section>
 
         </nav>
@@ -102,6 +102,52 @@
             </div>          
         
         </section>
+
+    
+    
+    
+    
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br><br><br>
+            <p>Reserch Or Swim is a stock investing analytics dashboard based on momemtum and fundamental principles. The dashboard
+            provides a single-page view to users that includes chart with price moving average for momentum investing,
+            year-over-year(YoY) earnings for fundamentals investing, and Wallstreet expectation level based on analyst ratings and
+            target price</p>
+            <br>
+
+            <p>In addition, based on data that used to construct the aforementioned charts, it also performs passed/failed analysis and
+            recommend a 'buy' only if it passed all test levels.</p>
+            <br>
+
+            <p>
+                This dashboard provides great benefits to investors who implement investment strategies strictly based on defined rules,
+                rather than sentiments. In addition, this dashboard makes research as simple as just one click away as the key criteria
+                are all in one dashboard.
+            </p>
+
+            <br>
+            
+
+            Recommendation logic:
+            <ul>
+                <li>Price Momentum: passed only if price moving average from last 30 days and increasing.</li>
+                <li>Company Earnings: passed only if earning is positive and YoY growth in the last two years is 10% or more.</li>
+                <li>Analyst Recommendation: passed only if 50% recommended Strong Buy or Buy.</li>
+            </ul> 
+          
+            <p>Analytical: passed only if all three tests above received a pass.</p>
+            
+
+        </div>  
+    
+    </div>
+
 
     </main>
 

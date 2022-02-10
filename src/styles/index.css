@@ -1,4 +1,17 @@
+html, body, section, article, h1, h2, p, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
 
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+
+  background: transparent;
+}
 
 body{
     font-family: 'Montserrat', sans-serif;
@@ -44,11 +57,12 @@ nav{
 }
 
 #retrieve-button{ 
-    left: -10;
+    left: -20px;
     border-radius:  0 15px 15px 0 ;
     border: none;
     font-size: 15px;
     height: 40px;
+    width: 100px;
     background-color: #152434;
     color: white;
     outline: none;
@@ -57,7 +71,7 @@ nav{
 
 #logo img{
     width: 300px;
-    height: 90px;
+    height: 80px;
 
 }
 
@@ -79,6 +93,10 @@ nav{
     align-items: center;
 }
 
+#about span:hover{
+    background-color: lightyellow;
+}
+
 
 #companyName{
     display: none;
@@ -88,6 +106,7 @@ nav{
 
 
 #analytic-banner{
+    margin-top: 20px;
     height: 80px;
     border: none;
     border-radius: 10px;
@@ -218,4 +237,50 @@ nav{
     padding: 10px;
 }
 
+footer a{
+    color: black;
+}
 
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content{
+    color: black;
+}

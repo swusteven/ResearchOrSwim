@@ -8,8 +8,8 @@ const earningChart = (data) => {
     }   
     
     const svg = d3.select("#earnings").append('svg')
-                .attr('width', 800)
-                .attr('height', 400)
+                .attr('width', 750)
+                .attr('height', 350)
                 // .style('background', '#C9D7D6'),
                 
           const margin = 50,

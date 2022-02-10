@@ -2,7 +2,7 @@
 
 **Background:**
 
-ReserchOrSwim is a stock investing analytic dashboard based on momemtum and fundamental principles. The dashboard provides a single-page view to users that includes chart with price moving average for momentum investing, year-over-year(YoY) earnings for fundamentals investing, and Wallstreet expectation level based on analyst ratings and target price. 
+ReserchOrSwim is a stock investing analytics dashboard based on momemtum and fundamental principles. The dashboard provides a single-page view to users that includes chart with price moving average for momentum investing, year-over-year(YoY) earnings for fundamentals investing, and Wallstreet expectation level based on analyst ratings and target price. 
 
 In addition, based on data that used to construct the aforementioned charts, it also performs passed/failed analysis and recommend a 'buy' only if it passed all test levels.
 
