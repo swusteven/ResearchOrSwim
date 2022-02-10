@@ -4,7 +4,7 @@ const analystRecommendationChart = (data) => {
     addHeader();
 
     for (let i = 0; i < data.length; i++) {
-        consolidatedData.push({stronBuy: data[i].strongBuy, buy: data[i].buy, hold: data[i].hold, sell: data[i].sell, period: data[i].period })
+        consolidatedData.push({stronBuy: Math.floor(data[i].strongBuy), buy: Math.floor(data[i].buy), hold: Math.floor(data[i].hold), sell: Math.floor(data[i].sell), period: Math.floor(data[i].period) })
         addRow();
     }
            
@@ -129,14 +129,20 @@ function createPieChart(consolidatedData){
         .data(arcs)
         .enter().append("text")
         .attr("transform", d => `translate(${arcLabel().centroid(d)})`)
+        // .attr('transform', function(d) {
+        //     const c = arcLabel().centroid(d);
+        //     return "translate(" + c[0]*1 +"," + c[1]*2 + ")";
+        // })
         .call(text => text.append("tspan")
             .attr("y", "-0.4em")
-            .attr("font-weight", "bold")
+            // .attr("font-weight", "bold")
             .text(d => d.data.name))
+            // .attr('fill', 'white')
         .call(text => text.filter(d => (d.endAngle - d.startAngle) > 0.3).append("tspan")
           .attr("x", 0)
           .attr("y", "0.7em")
-          .attr("fill-opacity", 0.7)
+          .attr("fill-opacity", 1)
+        //   .attr('fill', 'white')
           .text(d => d.data.share.toLocaleString()));
  }
 

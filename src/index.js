@@ -3,20 +3,6 @@ import "./styles/index.css"
 import Util from './scripts/util';
 import apiCalls from './scripts/api_calls'
 
-// Autofill when page loaded
-document.addEventListener("DOMContentLoaded", autofill)
-
-function autofill(){
-    document.querySelector("#ticker-symbol").value = 'AAPL';
-    apiCalls()
-}
-
-//Set event listener on the retrieve button.
-const retrieveButton = document.querySelector("input[id='retrieve-button']");   
-retrieveButton.addEventListener("click", apiCalls);
-
-
-
 
 // Get the modal
 const modal = document.getElementById("myModal");
@@ -26,6 +12,31 @@ const btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
+
+
+// Autofill when page loaded
+document.addEventListener("DOMContentLoaded", autofill)
+
+function autofill(){
+    document.querySelector("#ticker-symbol").value = 'AAPL';
+    apiCalls();
+    
+    //display modal
+    modal.style.display = "block";
+    
+}
+
+
+
+
+//Set event listener on the retrieve button.
+const retrieveButton = document.querySelector("input[id='retrieve-button']");   
+retrieveButton.addEventListener("click", apiCalls);
+
+
+
+
+
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
