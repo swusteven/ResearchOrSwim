@@ -4,7 +4,7 @@ const analystRecommendationChart = (data) => {
     addHeader();
 
     for (let i = 0; i < data.length; i++) {
-        consolidatedData.push({stronBuy: Math.floor(data[i].strongBuy), buy: Math.floor(data[i].buy), hold: Math.floor(data[i].hold), sell: Math.floor(data[i].sell), period: Math.floor(data[i].period) })
+        consolidatedData.push({stronBuy: Math.floor(data[i].strongBuy), buy: Math.floor(data[i].buy), hold: Math.floor(data[i].hold), sell: Math.floor(data[i].sell), period: data[i].period})
         addRow();
     }
            
