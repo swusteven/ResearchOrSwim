@@ -2,16 +2,23 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.css ***!
   \*******************************************************************************************************************************************/
 body {
+  font-family: "Montserrat", sans-serif;
   background-color: #12161f;
-  font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.5;
   color: white;
   display: block;
+  background-image: url(./welcome_bg.jpeg);
 }
 
 main {
   width: 1440px;
   margin: auto;
+}
+
+.company-lookup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ticker-symbol {
@@ -23,6 +30,8 @@ main {
   outline: none;
   background-color: #152434;
   color: white;
+  opacity: 0.6;
+  align-items: center;
 }
 
 #retrieve-button {
@@ -34,8 +43,9 @@ main {
   height: 40px;
   background-color: #152434;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
   outline: none;
+  opacity: 0.8;
 }
 
 nav {
@@ -72,6 +82,12 @@ nav {
   border: none;
   border-radius: 10px;
   background-color: #152434;
+  opacity: 0.8;
+}
+
+#anlytic-banner-summary div p {
+  color: lightskyblue;
+  text-align: center;
 }
 
 #anlytic-banner-summary div text {
@@ -158,6 +174,7 @@ nav {
 #historical-price, #earnings, #analytics, #analyst-pie-chart, #analyst-recommendation {
   border: none;
   background-color: #152434;
+  opacity: 0.7;
 }
 
 #display-right {
