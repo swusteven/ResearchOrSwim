@@ -15,6 +15,11 @@ main {
   margin: auto;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 .company-lookup {
   display: flex;
   justify-content: center;
@@ -39,41 +44,36 @@ main {
   border-radius: 0 15px 15px 0;
   border: none;
   font-size: 15px;
-  width: 250;
   height: 40px;
   background-color: #152434;
   color: white;
-  /* font-weight: bold; */
   outline: none;
   opacity: 0.8;
 }
 
-nav {
+#logo img {
+  width: 300px;
+  height: 90px;
+}
+
+#nav-links div {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 #nav-links {
-  width: 500px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 150px;
 }
 
-#nav-links li {
-  list-style: none;
-}
-
-#ticker-symbol {
-  width: 100px;
+#about {
+  display: flex;
+  align-items: center;
 }
 
 #companyName {
   display: none;
-}
-
-.company-lookup {
-  display: flex;
-  justify-content: left;
 }
 
 #analytic-banner {

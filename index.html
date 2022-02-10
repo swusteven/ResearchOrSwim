@@ -17,7 +17,6 @@
 <body>
      <main>
         <nav>
-       
             <section class='company-lookup'>
                 <form action="#">
                     <label id="ticker-label">
@@ -29,14 +28,19 @@
                 <span id="companyName"></span>
             </section>
 
-
+            <h1 id="logo">
+            <img src="./dist/logo_v3.png" alt="">
+            </h1>
        
-            <ul id="nav-links">
-                <i class="fa fa-github fa-3x"></i>
-                <i class="fa fa-linkedin-square" style="font-size:40px"></i>
-                </i>Instructions and Rules</li>
-            </ul>
-        <h1 id="logo">RESEARCH OR SWIM</h1>
+            <section id="nav-links">
+                <div><i class="fa fa-github fa-3x"></i></div>
+                <div><i class="fa fa-linkedin-square" style="font-size:40px"></i></div>               
+            </section>
+                
+            <section id='about'>
+                <span>About and Rules</span>
+                <img src="https://img.icons8.com/nolan/64/about.png" />
+            </section>
 
         </nav>
 
@@ -74,10 +78,10 @@
 
         <section class="display">
             <div id='display-left'> 
-                <div class="lables">1-Year Historical Price Chart with 30-days Moving Average</div>
+                <div class="lables">1-Year Historical Price with 30-days Moving Average</div>
                     <div id="historical-price"></div>
                 
-                <div class="lables">Year-over-Year Historical Earnings</div>
+                <div class="lables">Yearly Historical Earnings</div>
                     <div id="earnings"></div>
             </div>
 
