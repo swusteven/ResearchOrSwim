@@ -58,7 +58,7 @@ const apiCalls  = async ()=>{
 }
 
 
-
+//remove existing charts and contents before rendering another one
 function removeExistingContents(){
       d3.selectAll("#historical-price > svg").remove();
       d3.selectAll("#earnings > svg").remove();
@@ -70,7 +70,6 @@ function removeExistingContents(){
       d3.select("#last-price text").remove()
       d3.select("#analyst-buy-percentage text").remove()
       d3.select("#analytic-outcome text").remove()
-
 }
 
 
