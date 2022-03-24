@@ -37,38 +37,61 @@ const historicalPriceChart = (data) => {
     svg.append('g')
             .attr('id', 'xAxis')
             .attr('transform', `translate(0, ${height})`)
+            .style('font', '15px times')
             .call(d3.axisBottom(xScale));
 
     svg.append('g')
             .attr('id', 'yAxis')
+            .style('font', '15px times')
             .attr('transform', `translate(${width}, 0)`)
             .call(d3.axisRight(yScale));
 
 
     //  d3.line()([[10, 60], [40, 90], [60, 10], [190, 10]])
-    svg.append('path')
-        .data([consolidateData])
-        .style('fill', 'none')
-        .attr('id', 'priceChart')
-        .attr('stroke', '#008000')
-        .attr('stroke-width', '2')
-        .attr('d', d3.line()
-                    .x(function(d) { return xScale(d.date) })
-                    .y(function(d) { return yScale(d.closingPrice) })
-        );  
+    let path = svg
+                .append('path')
+                .data([consolidateData])
+                .style('fill', 'none')
+                .attr('id', 'priceChart')
+                .attr('stroke', '#008000')
+                .attr('stroke-width', '2')
+                .attr('d', d3.line()
+                            .x(function(d) { return xScale(d.date) })
+                            .y(function(d) { return yScale(d.closingPrice) })
+                );  
+        //get the length of the line and then animate
+        let totalLength = path.node().getTotalLength();
+        path
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            .attr("stroke-dashoffset", totalLength)
+            .transition()
+              .duration(3000)
+              .ease(d3.easeLinear)
+              .attr("stroke-dashoffset", 0)
+          
+
         
     //Moving Average over 30 days
     const movingAverageData = movingAverage(consolidateData, 30);                            
-    svg.append('path')
-            .data([movingAverageData])
-            .style('fill', 'none')
-            .attr('id', 'movingAverageLine')
-            .attr('stroke', '#FF8900')
-            .attr('d', d3.line()
-                    .x(function(d) { return xScale(d.date) })
-                    .y(function(d) { return yScale(d.average) })
-                    .curve(d3.curveBasis)
-            );
+    let mvPath = svg.append('path')
+                      .data([movingAverageData])
+                      .style('fill', 'none')
+                      .attr('id', 'movingAverageLine')
+                      .attr('stroke', '#FF8900')
+                      .attr('d', d3.line()
+                              .x(function(d) { return xScale(d.date) })
+                              .y(function(d) { return yScale(d.average) })
+                              .curve(d3.curveBasis)
+                      );
+
+        let mvTotalLength = mvPath.node().getTotalLength();
+        mvPath
+            .attr("stroke-dasharray", mvTotalLength + " " + mvTotalLength)
+            .attr("stroke-dashoffset", mvTotalLength)
+            .transition()
+              .duration(3000)
+              .ease(d3.easeLinear)
+              .attr("stroke-dashoffset", 0)
 
     //display companyName
     const companyName = document.querySelector('#companyName').textContent
@@ -77,6 +100,8 @@ const historicalPriceChart = (data) => {
         .attr("x", 30)
         .attr("y", 30)
         .attr("font-size", "30px")
+        .style('font-weight', 500)
+
         .attr("fill", "white")
         .text(companyName)
 
