@@ -71,8 +71,19 @@ const bars =  canvas.selectAll(".bar")
         .attr('height', function(d) {return height -  yScale(d)})        
 
          function onMouseOver(d,i){
-             d3.select(this).attr('class', 'highlight')
-             d3.select(this)
+            const xPos = parseFloat(d3.select(this).attr('x')) + xScale.bandwidth() / 2;
+            const yPos = parseFloat(d3.select(this).attr('y')) * 3
+            
+
+            d3.select('#tooltip')
+                .style('left', xPos + 'px')
+                .style('top', yPos + 'px')
+                .select('#value')
+                .text(`$${parseInt(i/1000).toLocaleString("en-US")}`)  // in this case (mouseOver) d is the event, i is the data and we want data so i
+            d3.select('#tooltip').classed("hidden", false)
+
+            d3.select(this).attr('class', 'highlight')
+            d3.select(this)
                 .transition()  //add animation
                 .duration(100)
                 .attr('width', xScale.bandwidth() + 5)
@@ -87,7 +98,10 @@ const bars =  canvas.selectAll(".bar")
                 .duration(100)
                 .attr('width', xScale.bandwidth())
                 .attr('y', function(d){return yScale(d)})
-                .attr('height', function(d){return height - yScale(d)})
+                .attr('height', function(d){return height - yScale(d)});
+
+            d3.select('#tooltip').classed("hidden", true)
+
          }
 };
 

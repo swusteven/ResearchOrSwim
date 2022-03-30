@@ -373,6 +373,32 @@ footer a {
 .highlight {
   fill: pink;
 }
+
+#tooltip {
+  position: absolute;
+  width: 50px;
+  height: auto;
+  background-color: blanchedalmond;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  /* z-index: 100; */
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+#tooltop.p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
