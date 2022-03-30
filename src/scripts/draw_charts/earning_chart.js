@@ -1,16 +1,17 @@
+import { schemeDark2 } from "d3";
+
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
         
     for (let i = data.length >10 ? 10 : data.length -1; i >=0; i--) {
-        revenue.push(data[i].revenue); 
+        revenue.push((data[i].revenue)); 
         year.push(data[i].year); 
     }   
     
     const svg = d3.select("#earnings").append('svg')
                 .attr('width', 750)
                 .attr('height', 350)
-                // .style('background', '#C9D7D6'),
                 
           const margin = 50,
                 width = svg.attr('width') - margin,
@@ -25,67 +26,69 @@ const earningChart = (data) => {
                     .range([height, 0])
                     .domain([0, d3.max(revenue)])
 
-    const grouped = svg.append('g')
+    const colors = d3.scaleLinear()
+                    .domain([0, d3.max(revenue)])
+                    .range(['#e81010', '#30e810'])
+
+    var tooltip = d3.select("#earnings")
+                    .append("div")
+                    .attr("class", "d3-tip")
+                    .style("position", "absolute")
+                    .style("opacity", 0);
+    
+
+    const canvas = svg.append('g')
                         .attr('transform', 'translate(' + 60 + ', '+ 50 +')');
 
-
-    grouped.append("g")
+    canvas.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(xScale));
 
-    grouped.append("g")
+    canvas.append("g")
          .call(d3.axisLeft(yScale).tickFormat(function(d){
-             return "$" + d;
-         }).ticks(10))
+             return "$" + d/1000;
+         })
+         .ticks(10))
          .append("text")
-         .attr("y", 6)
-         .attr("dy", "0.71em")
          .attr("text-anchor", "end")
-         .text("value");
-
-    grouped.selectAll(".bar")
+         .text("value")
+            
+const bars =  canvas.selectAll(".bar")
         .data(revenue)
-        .enter().append("rect")
+        .enter()
+        .append("rect")
         .attr('class', 'bar')
-        .style('fill', '#c61c6f')
+        .style('fill', function(d){return colors(d)})
         .attr('x', function(d, i) {return xScale(year[i])})   //takes in year
         .attr('y', function(d) {return yScale(d)})
         .attr('width', xScale.bandwidth())
-        .attr('height', function(d) {return height -  yScale(d)})
-        
-      .on('mouseover', function(d){
-            d3.select(this)
-                .style('opacity', .5)            //or use style('fill'. 'color')
-            })
+        .on('mouseover', onMouseOver)
+        .on('mouseout', onMouseOut)
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(500)
+        .delay(function(d, i) {return i * 50})
+        .attr('height', function(d) {return height -  yScale(d)})        
 
-        .on('mouseout', function(d){
-            d3.select(this)
-                 .style('opacity', 1)
-        })
-                
-        ;
+         function onMouseOver(d,i){
+             d3.select(this).attr('class', 'highlight')
+             d3.select(this)
+                .transition()  //add animation
+                .duration(100)
+                .attr('width', xScale.bandwidth() + 5)
+                .attr('y', function(d){return yScale(d) - 10})
+                .attr('height', function(d) {return  height -  yScale(d) + 10})
+         }
 
-
-    // svg.append("text")
-    //     .attr("transform", "translate(150,0)")
-    //     .attr("x", 50)
-    //     .attr("y", 50)
-    //     .attr("font-size", "18px")
-    //     .text(`${year[0]} - ${year[year.length -1]} earnings  `)
-
-
-    // //transition effect
-    // chart.transition()
-    //     .attr('y', (d)=> height - yScale(d))
-    //     .attr('height', (d)=> yScale(d))
-    //     .delay(function(d, idx){
-    //         return idx * 100;
-    //     })
-
-
-
-
-
+         function onMouseOut(d, i){
+             d3.select(this).attr('class', 'bar')
+             d3.select(this)
+                .transition()
+                .duration(100)
+                .attr('width', xScale.bandwidth())
+                .attr('y', function(d){return yScale(d)})
+                .attr('height', function(d){return height - yScale(d)})
+         }
 };
 
 
