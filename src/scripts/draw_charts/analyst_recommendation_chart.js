@@ -85,9 +85,9 @@ function createPieChart(consolidatedData){
         data.push({name: "Hold", share: mostRecent.hold});
         data.push({name: "Sell", share: mostRecent.sell});
     
-    const margin = { top: 30, right: 30, bottom: 30, left: 30 },
-        width = 250 - margin.left - margin.right,
-        height = 200 - margin.top - margin.bottom,
+    const margin = { top: 10, right: 30, bottom: 10, left: 30 },
+        width = 270 - margin.left - margin.right,
+        height = 220 - margin.top - margin.bottom,
         tooltip = { width: 50, height: 50, x: 10, y: -30 };
 
     //initialize margin end
@@ -123,27 +123,23 @@ function createPieChart(consolidatedData){
         .attr("fill", d => color(d.data.share))
         .attr("d", arc)
         .append("title")
-        .text(d => `${d.data.name}: ${d.data.name.toLocaleString()}`);
+        .text(d => `${d.data.name}: ${d.data.name}`);
 
     svg.append("g").selectAll("text")
         .data(arcs)
         .enter().append("text")
         .attr("transform", d => `translate(${arcLabel().centroid(d)})`)
-        // .attr('transform', function(d) {
-        //     const c = arcLabel().centroid(d);
-        //     return "translate(" + c[0]*1 +"," + c[1]*2 + ")";
-        // })
         .call(text => text.append("tspan")
-            .attr("y", "-0.4em")
-            // .attr("font-weight", "bold")
-            .text(d => d.data.name))
-            // .attr('fill', 'white')
-        .call(text => text.filter(d => (d.endAngle - d.startAngle) > 0.3).append("tspan")
-          .attr("x", 0)
-          .attr("y", "0.7em")
-          .attr("fill-opacity", 1)
-        //   .attr('fill', 'white')
-          .text(d => d.data.share.toLocaleString()));
+            .attr("y", "-0.1em")            
+            .text(d => d.data.name))           
+        .call(text => text.filter(d => 180 / Math.PI * (d.endAngle - d.startAngle) / 2 + 45)
+            .append("tspan")
+            .attr("x", 0)
+            .attr("y", "1em")
+            .attr("fill-opacity", 1)        
+            .text(d => d.data.share));
+
+
  }
 
 
