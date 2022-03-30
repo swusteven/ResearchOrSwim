@@ -45,7 +45,7 @@ const earningChart = (data) => {
 
     canvas.append("g")
          .call(d3.axisLeft(yScale).tickFormat(function(d){
-             return "$" + d;
+             return "$" + (d/1000).toLocaleString("en-US");
          })
          .ticks(10))
          .append("text")
