@@ -27,7 +27,14 @@ const earningChart = (data) => {
     const colors = d3.scaleLinear()
                     .domain([0, d3.max(revenue)])
                     .range(['#e81010', '#30e810'])
-  
+
+    let tooltip = d3.select('body')
+                    .append('div')
+                    .style('position', 'absolute')
+                    .style('padding', '0 10px')
+                    .style('background', 'white')
+                    .style('opacity', 0)
+                    .style('color', 'black');
 
     const canvas = svg.append('g')
                         .attr('transform', 'translate(' + 60 + ', '+ 50 +')');
@@ -55,6 +62,14 @@ const bars =  canvas.selectAll(".bar")
         .attr('y', function(d) {return yScale(d)})
         .attr('width', xScale.bandwidth())
         .on('mouseover', onMouseOver)
+            // tooltip.transition().duration(200).style('opacity', .9)
+            
+            // tooltip.html(d)
+                
+            //     .style('left', d.pageX -35 + 'px')
+            //     .style('top', d.pageY -30 + 'px')
+
+        // })
         .on('mouseout', onMouseOut)
         .transition()
         .ease(d3.easeLinear)
@@ -63,9 +78,8 @@ const bars =  canvas.selectAll(".bar")
         .attr('height', function(d) {return height -  yScale(d)})        
 
          function onMouseOver(d, i){
-            let xPos = parseFloat(d3.select(this).attr('x')) + xScale.bandwidth() /2 ;
-            let yPos = parseFloat(d3.select(this).attr('y')) / 2 + (height  / 2) ;
-                   
+            let xPos = d.pageX;
+            let yPos = d.pageY                   
 
             d3.select('#tooltip')
                 .style('left', xPos + 'px')
