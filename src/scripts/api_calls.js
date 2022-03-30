@@ -12,12 +12,13 @@ const apiCalls  = async ()=>{
     //--- Finhub earning endpoint API
     const apiURL = "https://finnhub.io/api/v1";
     const token = "sandbox_c7vfjqiad3i9ikp81lg0";
+    const key = "c7us8dqad3ie4vchpupg"
     const endPoint = `/stock/financials?symbol=${ticker}&statement=ic&freq=annual`;        
     const earningAPI = fetch(`${apiURL}${endPoint}&token=${token}`)
     
    //--- Finhub 1 year historical price endpoint API
    const historicalPriceEndPoint = `/stock/candle?symbol=${ticker}&resolution=D&from=1614644236&to=1643674636`
-   const historicalPriceAPI =  fetch(`${apiURL}${historicalPriceEndPoint}&token=${token}`)
+   const historicalPriceAPI =  fetch(`${apiURL}${historicalPriceEndPoint}&token=${key}`)
 
 
     // latest analyst recommendation trends

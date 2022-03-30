@@ -21,21 +21,46 @@ retrieveButton.addEventListener("click", apiCalls);
 
 
 
-// //modal
-// const modal = document.getElementById("myModal");
-// const btn = document.getElementById("myBtn");
-// const span = document.getElementsByClassName("close")[0];
+//landingpage modal
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName("close")[0];
+const close_btn = document.getElementsByClassName("close_btn")[0];
 
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
 
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+span.onclick = function() {
+  modal.style.display = "none";
+}
+close_btn.onclick = function() {
+  modal.style.display = "none";
+}
 
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+// aboutpage modal
+const aboutPageModal = document.getElementById("aboutPageModal");
+const btn = document.getElementById("myBtn");
+const aboutPagespan = document.getElementsByClassName("aboutPageclose")[0];
+const aboutPageclose_btn = document.getElementsByClassName("about_page_close_btn")[0];
+
+btn.onclick = function() {
+  aboutPageModal.style.display = "block";
+}
+
+aboutPagespan.onclick = function() {
+  aboutPageModal.style.display = "none";
+}
+
+aboutPageclose_btn.onclick = function() {
+  aboutPageModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == aboutPageModal) {
+    aboutPageModal.style.display = "none";
+  }
+}

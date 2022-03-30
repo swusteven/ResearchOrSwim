@@ -5,7 +5,7 @@ const historicalPriceChart = (data) => {
         consolidateData.push({closingPrice: data.c[i], date: convertUnixTime(data.t[i])})     
     }
        
-    const margin ={top: 30, right: 30, bottom: 30, left: 30},
+    const margin ={top: 30, right: 40, bottom: 30, left: 40},
           width = 750 - margin.left - margin.right,
           height = 350 - margin.top - margin.bottom;
 

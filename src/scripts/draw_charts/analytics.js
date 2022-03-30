@@ -1,4 +1,3 @@
-import { drag } from "d3";
 
 const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
     // covert data

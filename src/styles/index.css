@@ -307,6 +307,8 @@ footer a {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* The Close Button */
@@ -322,10 +324,6 @@ footer a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-
-.modal-content {
-  color: black;
 }
 
 .modal-content {
@@ -359,6 +357,22 @@ footer a {
 #myModal > div > p:nth-child(12) > span {
   font-weight: bold;
 }
+
+.close_btn_wrapper {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.close_btn {
+  background-color: greenyellow;
+  width: 150px;
+  height: 50px;
+  font-weight: 600;
+  margin: auto;
+}
+
+/* --- bar chart --- */
 
 .highlight {
   fill: pink;
