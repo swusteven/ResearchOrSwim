@@ -9,7 +9,7 @@ const analystRecommendationChart = (data) => {
     }
            
     addAnalystData(consolidatedData);  
-    createPieChart(consolidatedData);
+    // createPieChart(consolidatedData);
 
 }
 
@@ -83,7 +83,7 @@ function createPieChart(consolidatedData){
         data.push({name: "Strong Buy", share: mostRecent.strongBuy});
         data.push({name: "Buy", share: mostRecent.buy});
         data.push({name: "Hold", share: mostRecent.hold});
-        data.push({name: "Sell", share: mostRecent.sell});
+        // data.push({name: "Sell", share: mostRecent.sell});
     
     const margin = { top: 10, right: 30, bottom: 10, left: 30 },
         width = 270 - margin.left - margin.right,
@@ -111,8 +111,8 @@ function createPieChart(consolidatedData){
     }
     
     const color = d3.scaleOrdinal()
-            .domain(data.map(d => d.name))
-            .range(d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), data.length).reverse())
+        .domain(data)
+                            .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
 
     const arcs = pie(data);
          svg.append("g")
@@ -129,16 +129,23 @@ function createPieChart(consolidatedData){
         .data(arcs)
         .enter().append("text")
         .attr("transform", d => `translate(${arcLabel().centroid(d)})`)
+        // .attr('transform', function(d) {
+        //     const c = arcLabel().centroid(d);
+        //     return "translate(" + c[0]*1 +"," + c[1]*2 + ")";
+        // })
         .call(text => text.append("tspan")
-            .attr("y", "-0.1em")            
-            .text(d => d.data.name))           
-        .call(text => text.filter(d => 180 / Math.PI * (d.endAngle - d.startAngle) / 2 + 45)
-            .append("tspan")
-            .attr("x", 0)
-            .attr("y", "1em")
-            .attr("fill-opacity", 1)        
-            .text(d => d.data.share));
+            .attr("y", "-0.4em")
+            .attr("font-weight", "bold")
+            .text(d => d.data.name))
+            // .attr('fill', 'red')
+        .call(text => text.filter(d => (d.endAngle - d.startAngle) > 0.3).append("tspan")
+          .attr("x", 0)
+          .attr("y", "0.7em")
+          .attr("fill-opacity", 1)
+        //   .attr('fill', 'white')
+          .text(d => d.data.share.toLocaleString()));
 
+    
 
  }
 

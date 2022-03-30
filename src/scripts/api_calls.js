@@ -64,7 +64,6 @@ function removeExistingContents(){
       d3.selectAll("#earnings > svg").remove();
       d3.selectAll("#analyst-recommendation-table tr").remove();
       d3.selectAll("#analytics-table tr").remove();
-      d3.selectAll("#analyst-pie-chart svg").remove();
       d3.select("#last-30-days-moving-average text").remove()
       d3.select("#yoy-earning-growth text").remove()
       d3.select("#last-price text").remove()
