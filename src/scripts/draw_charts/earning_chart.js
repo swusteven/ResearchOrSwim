@@ -62,14 +62,6 @@ const bars =  canvas.selectAll(".bar")
         .attr('y', function(d) {return yScale(d)})
         .attr('width', xScale.bandwidth())
         .on('mouseover', onMouseOver)
-            // tooltip.transition().duration(200).style('opacity', .9)
-            
-            // tooltip.html(d)
-                
-            //     .style('left', d.pageX -35 + 'px')
-            //     .style('top', d.pageY -30 + 'px')
-
-        // })
         .on('mouseout', onMouseOut)
         .transition()
         .ease(d3.easeLinear)
