@@ -1,4 +1,13 @@
-html, body, section, article, h1, h2, p, strong, em, a {
+html,
+body,
+section,
+article,
+h1,
+h2,
+p,
+strong,
+em,
+a {
   margin: 0;
   border: 0;
   padding: 0;
@@ -13,287 +22,269 @@ html, body, section, article, h1, h2, p, strong, em, a {
   background: transparent;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
-    background-color: #12161f;
-    line-height: 1.5;
-    color: white;
-    display: block;
-    background-image: url(./welcome_bg.jpeg);
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #12161f;
+  line-height: 1.5;
+  color: white;
+  display: block;
+  background-image: url(./welcome_bg.jpeg);
 }
 
-main{
-    width: 1440px;
-    margin: auto;
+main {
+  width: 1440px;
+  margin: auto;
 }
 
-
-
-
-nav{
-    display: flex;
-    justify-content: space-between; 
+nav {
+  display: flex;
+  justify-content: space-between;
 }
 
-
-
-.company-lookup{
-    display: flex;
-    justify-content: center;
-    align-items:flex-end;
+.company-lookup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-#ticker-symbol{
-    font-size: 15px;
-    border-radius: 15px 0 0 15px;
-    border: none;
-    height: 40px;
-    width: 200px;
-    outline: none;
-    background-color: #152434;
-    color: white;
-    opacity: .7;
-    align-items: center;
+#ticker-symbol {
+  font-size: 15px;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  height: 40px;
+  width: 200px;
+  outline: none;
+  background-color: #152434;
+  color: white;
+  opacity: 0.7;
+  align-items: center;
 }
 
-#ticker-symbol:hover{
-    background-color: gold;
-    cursor: pointer;
-    color: black;
-    opacity: .6;
+#ticker-symbol:hover {
+  background-color: gold;
+  cursor: pointer;
+  color: black;
+  opacity: 0.6;
 }
 
-
-
-#retrieve-button{ 
-    left: -20px;
-    border-radius:  0 15px 15px 0 ;
-    border: none;
-    font-size: 15px;
-    height: 40px;
-    width: 100px;
-    background-color: #152434;
-    color: white;
-    outline: none;
-    opacity: .8;
+#retrieve-button {
+  left: -20px;
+  border-radius: 0 15px 15px 0;
+  border: none;
+  font-size: 15px;
+  height: 40px;
+  width: 100px;
+  background-color: #152434;
+  color: white;
+  outline: none;
+  opacity: 0.8;
 }
 
-#retrieve-button:hover{
-    background-color: gold;
-    cursor: pointer;
-    color: black;
+#retrieve-button:hover {
+  background-color: gold;
+  cursor: pointer;
+  color: black;
 }
 
-#logo img{
-    width: 300px;
-    height: 80px;
+#logo img {
+  width: 300px;
+  height: 80px;
 }
 
-#nav-links a{
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
+#nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
 }
 
-
-#nav-links a:hover{
-    background-color: gold;
-    cursor: pointer;
-    color: black;
-    opacity: .8;
+#nav-links a:hover {
+  background-color: gold;
+  cursor: pointer;
+  color: black;
+  opacity: 0.8;
 }
 
-#nav-links{
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
+#nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
 }
 
-
-
-#about{
-    display: flex;
-    align-items: center;
+#about {
+  display: flex;
+  align-items: center;
 }
 
-#myBtn{
-    padding: 30px;
+#myBtn {
+  padding: 30px;
 }
 
-
-
-#myBtn:hover{
-    background-color: gold;
-    cursor: pointer;
-    color: black;
-    opacity: .8;
+#myBtn:hover {
+  background-color: gold;
+  cursor: pointer;
+  color: black;
+  opacity: 0.8;
 }
 
-
-#companyName{
-    display: none;
+#companyName {
+  display: none;
 }
 
-
-
-
-#analytic-banner{
-    margin-top: 20px;
-    height: 80px;
-    border: none;
-    border-radius: 10px;
-    background-color: #152434;
-    opacity: .8;
+#analytic-banner {
+  margin-top: 20px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background-color: #152434;
+  opacity: 0.8;
 }
 
-#anlytic-banner-summary div  p{
-    color: lightskyblue;
-    text-align: center;
+#anlytic-banner-summary div p {
+  color: lightskyblue;
+  text-align: center;
 }
 
-
-#anlytic-banner-summary div:hover{
-    background-color: #152434;
-    cursor: pointer;
-    opacity: .6;
+#anlytic-banner-summary div:hover {
+  background-color: #152434;
+  cursor: pointer;
+  opacity: 0.6;
 }
 
-#anlytic-banner-summary div  text{
-    color: lightgreen;
-    text-align: center;
+#anlytic-banner-summary div text {
+  color: lightgreen;
+  text-align: center;
 }
 
-#analytic-outcome{
-    text-align: center;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+#analytic-outcome {
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
-#analytic-outcome:hover{
-    background-color: #152434;
-    cursor: pointer;
-    opacity: .8;
+#analytic-outcome:hover {
+  background-color: #152434;
+  cursor: pointer;
+  opacity: 0.8;
 }
 
-#analytic-outcome > text{
-    transform: skewY(-10deg);
-    font-size: large;
-    color: lightsalmon;
+#analytic-outcome > text {
+  transform: skewY(-10deg);
+  font-size: large;
+  color: lightsalmon;
 
-    background: transparent;
-        border-radius: 90%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        color: lightsalmon;
-        display: inline-block;
-        font-weight: bold;
-        line-height: 30px;
-        margin-right: 5px;
-        text-align: center;
-        border: yellowgreen 6px solid;
-        width: 250px;
+  background: transparent;
+  border-radius: 90%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: lightsalmon;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 30px;
+  margin-right: 5px;
+  text-align: center;
+  border: yellowgreen 6px solid;
+  width: 250px;
 }
 
-
-#analytic-banner{
-    display: flex;
-    justify-content: space-evenly;
+#analytic-banner {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#anlytic-banner-summary{
-    display: flex;
-    justify-content: space-evenly; 
+#anlytic-banner-summary {
+  display: flex;
+  justify-content: space-evenly;
 }
-#anlytic-banner-summary div{
-    padding: 0px 50px 0 50px;   
-}
-
-#analytic-outcome{
-    width: 200px;
+#anlytic-banner-summary div {
+  padding: 0px 50px 0 50px;
 }
 
-#last-price > p, #last-30-days-moving-average > p, #yoy-earning-growth > p, #analyst-buy-percentage > p{
-    color: #8daac6;
-    margin: 0;
+#analytic-outcome {
+  width: 200px;
 }
 
-#last-price, #last-30-days-moving-average, #yoy-earning-growth, #analyst-buy-percentage{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+#last-price > p,
+#last-30-days-moving-average > p,
+#yoy-earning-growth > p,
+#analyst-buy-percentage > p {
+  color: #8daac6;
+  margin: 0;
 }
 
-
-
-
-
-.display{
-    display: flex;
-    flex-wrap: wrap;
+#last-price,
+#last-30-days-moving-average,
+#yoy-earning-growth,
+#analyst-buy-percentage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-#display-left{
-    display: flex;
-    flex-direction: column;
-    width: 780px;
+.display {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
-.lables{
-    margin-top: 20px;
-    border-bottom: gray 1px solid;
-    border-radius: 10px 10px 0 0;
-    background-color: #152434;
-    height: 40px;
-    padding: 5px;
-    display: flex;
-    align-items: center;
+#display-left {
+  display: flex;
+  flex-direction: column;
+  width: 780px;
 }
 
-
-#historical-price, #earnings, #analytics, #analyst-pie-chart, #analyst-recommendation{
-    border: none;
-    background-color: #152434;
-    opacity: .7;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+.lables {
+  margin-top: 20px;
+  border-bottom: gray 1px solid;
+  border-radius: 10px 10px 0 0;
+  background-color: #152434;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
-
-#display-right{   
-    margin-left: auto;
-    margin-right: 0;
+#historical-price,
+#earnings,
+#analytics,
+#analyst-pie-chart,
+#analyst-recommendation {
+  border: none;
+  background-color: #152434;
+  opacity: 0.7;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
 }
 
-
-#analyst-pie-chart{
-    text-align: center;
-    padding: 17px
+#display-right {
+  margin-left: auto;
+  margin-right: 0;
 }
 
-#analytics-header-tr > th.category, #analytics-header-tr > th.result{
-    text-align: left;
+#analyst-pie-chart {
+  text-align: center;
+  padding: 17px;
 }
 
-#analyst-recommendation-table > tr.analyst-recommendation-table-header{
-    text-align: left;
-
+#analytics-header-tr > th.category,
+#analytics-header-tr > th.result {
+  text-align: left;
 }
 
-#analytics-table tr td, #analytics-header-tr th, #analyst-recommendation-table > tr th, #analyst-recommendation-table > tr td {
-    padding: 10px;;
+#analyst-recommendation-table > tr.analyst-recommendation-table-header {
+  text-align: left;
 }
 
-
-
-
-footer a{
-    color: black;
+#analytics-table tr td,
+#analytics-header-tr th,
+#analyst-recommendation-table > tr th,
+#analyst-recommendation-table > tr td {
+  padding: 10px;
 }
 
-
+footer a {
+  color: black;
+}
 
 .modal {
   display: none; /* Hidden by default */
@@ -305,8 +296,8 @@ footer a{
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -333,39 +324,70 @@ footer a{
   cursor: pointer;
 }
 
-.modal-content{
-    color: black;
+.modal-content {
+  color: black;
 }
 
-
-.modal-content{
-    font-family: 'Montserrat', sans-serif;
-    background-color: #12161f;
-    color: white;
-    display: block;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: 1px;
+.modal-content {
+  font-family: "Montserrat", sans-serif;
+  background-color: #12161f;
+  color: white;
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1px;
 }
 
-.modal-header{
+.modal-header {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
-.modal-h2{
-    font-size: 24px;
-    color: yellowgreen;
+.modal-h2 {
+  font-size: 24px;
+  color: yellowgreen;
 }
 
-#modal-header-logo{
-    display: flex;
-    justify-content: center;
+#modal-header-logo {
+  display: flex;
+  justify-content: center;
 }
 
-#myModal > div > p:nth-child(12) > span{
-    font-weight: bold;
+#myModal > div > p:nth-child(12) > span {
+  font-weight: bold;
+}
+
+.highlight {
+  fill: pink;
+}
+
+#tooltip {
+  position: absolute;
+  width: 50px;
+  height: auto;
+  padding: 10px;
+
+  background-color: blanchedalmond;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 100;
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
 }

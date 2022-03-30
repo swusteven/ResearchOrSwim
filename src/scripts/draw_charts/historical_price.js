@@ -5,7 +5,7 @@ const historicalPriceChart = (data) => {
         consolidateData.push({closingPrice: data.c[i], date: convertUnixTime(data.t[i])})     
     }
        
-    const margin ={top: 30, right: 30, bottom: 30, left: 0},
+    const margin ={top: 30, right: 30, bottom: 30, left: 30},
           width = 750 - margin.left - margin.right,
           height = 350 - margin.top - margin.bottom;
 
@@ -37,38 +37,91 @@ const historicalPriceChart = (data) => {
     svg.append('g')
             .attr('id', 'xAxis')
             .attr('transform', `translate(0, ${height})`)
+            .style('font', '13px times')
             .call(d3.axisBottom(xScale));
 
     svg.append('g')
             .attr('id', 'yAxis')
+            .style('font', '13px times')
             .attr('transform', `translate(${width}, 0)`)
             .call(d3.axisRight(yScale));
 
+    svg.append('g')
+            .attr('id', 'yAxis')
+            .style('font', '13px times')
+            // .attr('transform', `translate(${width}, 0)`)
+            .call(d3.axisLeft(yScale));
+
+              // This allows to find the closest X index of the mouse:
+  var bisect = d3.bisector(function(d) { return d.x; }).left;
+
+  // Create the circle that travels along the curve of chart
+  var focus = svg
+    .append('g')
+    .append('circle')
+      .style("fill", "none")
+      .attr("stroke", "black")
+      .attr('r', 8.5)
+      .style("opacity", 0)
+
+  // Create the text that travels along the curve of chart
+  var focusText = svg
+    .append('g')
+    .append('text')
+      .style("opacity", 0)
+      .attr("text-anchor", "left")
 
     //  d3.line()([[10, 60], [40, 90], [60, 10], [190, 10]])
-    svg.append('path')
-        .data([consolidateData])
-        .style('fill', 'none')
-        .attr('id', 'priceChart')
-        .attr('stroke', '#008000')
-        .attr('stroke-width', '2')
-        .attr('d', d3.line()
-                    .x(function(d) { return xScale(d.date) })
-                    .y(function(d) { return yScale(d.closingPrice) })
-        );  
+    let path = svg
+                .append('path')
+                .data([consolidateData])
+                .style('fill', 'none')
+                .attr('id', 'priceChart')
+                .attr('stroke', '#008000')
+                .attr('stroke-width', '2')
+                .attr('d', d3.line()
+                            .x(function(d) { return xScale(d.date) })
+                            .y(function(d) { return yScale(d.closingPrice) })
+                );
+
+               
+    
+        //get the length of the line and then animate
+        let totalLength = path.node().getTotalLength();
+        path
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            .attr("stroke-dashoffset", totalLength)
+            .transition()
+              .duration(3000)
+              .ease(d3.easeLinear)
+              .attr("stroke-dashoffset", 0)
+
+
+
+          
+
         
     //Moving Average over 30 days
     const movingAverageData = movingAverage(consolidateData, 30);                            
-    svg.append('path')
-            .data([movingAverageData])
-            .style('fill', 'none')
-            .attr('id', 'movingAverageLine')
-            .attr('stroke', '#FF8900')
-            .attr('d', d3.line()
-                    .x(function(d) { return xScale(d.date) })
-                    .y(function(d) { return yScale(d.average) })
-                    .curve(d3.curveBasis)
-            );
+    let mvPath = svg.append('path')
+                      .data([movingAverageData])
+                      .style('fill', 'none')
+                      .attr('id', 'movingAverageLine')
+                      .attr('stroke', '#FF8900')
+                      .attr('d', d3.line()
+                              .x(function(d) { return xScale(d.date) })
+                              .y(function(d) { return yScale(d.average) })
+                              .curve(d3.curveBasis)
+                      );
+
+        let mvTotalLength = mvPath.node().getTotalLength();
+        mvPath
+            .attr("stroke-dasharray", mvTotalLength + " " + mvTotalLength)
+            .attr("stroke-dashoffset", mvTotalLength)
+            .transition()
+              .duration(3000)
+              .ease(d3.easeLinear)
+              .attr("stroke-dashoffset", 0)
 
     //display companyName
     const companyName = document.querySelector('#companyName').textContent
@@ -77,6 +130,8 @@ const historicalPriceChart = (data) => {
         .attr("x", 30)
         .attr("y", 30)
         .attr("font-size", "30px")
+        .style('font-weight', 500)
+
         .attr("fill", "white")
         .text(companyName)
 
