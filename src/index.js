@@ -60,7 +60,10 @@ aboutPageclose_btn.onclick = function() {
 }
 
 window.onclick = function(event) {
-  if (event.target == aboutPageModal) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+  if (event.target == aboutPageModal) {    
     aboutPageModal.style.display = "none";
   }
 }
