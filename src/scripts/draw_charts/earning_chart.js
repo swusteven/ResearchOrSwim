@@ -1,5 +1,3 @@
-import { schemeDark2 } from "d3";
-
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
@@ -29,13 +27,7 @@ const earningChart = (data) => {
     const colors = d3.scaleLinear()
                     .domain([0, d3.max(revenue)])
                     .range(['#e81010', '#30e810'])
-
-    var tooltip = d3.select("#earnings")
-                    .append("div")
-                    .attr("class", "d3-tip")
-                    .style("position", "absolute")
-                    .style("opacity", 0);
-    
+  
 
     const canvas = svg.append('g')
                         .attr('transform', 'translate(' + 60 + ', '+ 50 +')');
@@ -46,7 +38,7 @@ const earningChart = (data) => {
 
     canvas.append("g")
          .call(d3.axisLeft(yScale).tickFormat(function(d){
-             return "$" + d/1000;
+             return "$" + d;
          })
          .ticks(10))
          .append("text")
@@ -70,10 +62,10 @@ const bars =  canvas.selectAll(".bar")
         .delay(function(d, i) {return i * 50})
         .attr('height', function(d) {return height -  yScale(d)})        
 
-         function onMouseOver(d,i){
-            const xPos = parseFloat(d3.select(this).attr('x')) + xScale.bandwidth() / 2;
-            const yPos = parseFloat(d3.select(this).attr('y')) * 3
-            
+         function onMouseOver(d, i){
+            let xPos = parseFloat(d3.select(this).attr('x')) + xScale.bandwidth() /2 ;
+            let yPos = parseFloat(d3.select(this).attr('y')) / 2 + (height  / 2) ;
+                   
 
             d3.select('#tooltip')
                 .style('left', xPos + 'px')

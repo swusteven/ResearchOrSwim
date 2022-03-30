@@ -378,6 +378,7 @@ footer a {
   position: absolute;
   width: 50px;
   height: auto;
+  padding: 10px;
   background-color: blanchedalmond;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -385,14 +386,14 @@ footer a {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   pointer-events: none;
-  /* z-index: 100; */
+  z-index: 100;
 }
 
 #tooltip.hidden {
   display: none;
 }
 
-#tooltop.p {
+#tooltip p {
   margin: 0;
   font-family: sans-serif;
   font-size: 16px;
