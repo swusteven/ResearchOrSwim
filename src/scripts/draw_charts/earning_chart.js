@@ -21,7 +21,7 @@ const earningChart = (data) => {
                     .domain(year)
 
     const yScale = d3.scaleLinear()
-                    .range([height, 0])
+                    .range([height, -30])
                     .domain([0, d3.max(revenue)])
 
     const colors = d3.scaleLinear()

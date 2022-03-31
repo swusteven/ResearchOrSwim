@@ -1,4 +1,3 @@
-import { create } from "d3";
 import earningChart from "./draw_charts/earning_chart";
 import historicalPriceChart from "./draw_charts/historical_price";
 import analystRecommendationChart from "./draw_charts/analyst_recommendation_chart";
@@ -59,18 +58,17 @@ const apiCalls  = async ()=>{
 }
 
 
-//remove existing charts and contents before rendering another one
+        //remove existing charts and contents before rendering another one
 function removeExistingContents(){
-      d3.selectAll("#historical-price > svg").remove();
-      d3.selectAll("#earnings > svg").remove();
-      d3.selectAll("#analyst-recommendation-table tr").remove();
-      d3.selectAll("#analytics-table tr").remove();
-      d3.select("#last-30-days-moving-average text").remove()
-      d3.select("#yoy-earning-growth text").remove()
-      d3.select("#last-price text").remove()
-      d3.select("#analyst-buy-percentage text").remove()
-      d3.select("#analytic-outcome text").remove()
-
+        d3.selectAll("#historical-price > svg").remove();
+        d3.selectAll("#earnings > svg").remove();
+        d3.selectAll("#analyst-recommendation-table tr").remove();
+        d3.selectAll("#analytics-table tr").remove();
+        d3.select("#last-30-days-moving-average text").remove()
+        d3.select("#yoy-earning-growth text").remove()
+        d3.select("#last-price text").remove()
+        d3.select("#analyst-buy-percentage text").remove()
+        d3.select("#analytic-outcome text").remove()
 }
 
 
