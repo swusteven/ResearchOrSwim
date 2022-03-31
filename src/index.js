@@ -14,7 +14,6 @@ function autofill(){
 }
 
 
-
 //Set event listener on the search button.
 const retrieveButton = document.querySelector("input[id='retrieve-button']");   
 retrieveButton.addEventListener("click", apiCalls);

@@ -1,4 +1,7 @@
 const historicalPriceChart = (data) => {
+  if (data.s === 'no_data'){
+    alert("Invalid ticker symbol. Please try again. For example, type appl for Apple")
+  }   
   const consolidateData = [];
     
     for (let i = 0; i < data.c.length; i++) {
@@ -7,7 +10,7 @@ const historicalPriceChart = (data) => {
        
     const margin ={top: 0, right: 40, bottom: 30, left: 40},
           width = 750 - margin.left - margin.right,
-          height = 350 - margin.top - margin.bottom;
+          height = 300 - margin.top - margin.bottom;
 
     const xMin = d3.min(consolidateData, d => d.date),
           xMax = d3.max(consolidateData, d => d.date),
@@ -18,7 +21,6 @@ const historicalPriceChart = (data) => {
     d3.select('#historical-price').append('svg')
         .attr('height', height + margin.top + margin.bottom)
         .attr('width', width + margin.left + margin.right)
-        // .style('background', '#C9D7D6')
         .append('g')
         .attr('transform', `translate(${margin['left']},  ${margin['top']})`)
 
@@ -49,10 +51,9 @@ const historicalPriceChart = (data) => {
     svg.append('g')
             .attr('id', 'yAxis')
             .style('font', '13px times')
-            // .attr('transform', `translate(${width}, 0)`)
             .call(d3.axisLeft(yScale));
 
-              // This allows to find the closest X index of the mouse:
+  // This allows to find the closest X index of the mouse:
   var bisect = d3.bisector(function(d) { return d.x; }).left;
 
   // Create the circle that travels along the curve of chart
@@ -86,20 +87,15 @@ const historicalPriceChart = (data) => {
 
                
     
-        //get the length of the line and then animate
-        let totalLength = path.node().getTotalLength();
-        path
-            .attr("stroke-dasharray", totalLength + " " + totalLength)
-            .attr("stroke-dashoffset", totalLength)
-            .transition()
-              .duration(3000)
-              .ease(d3.easeLinear)
-              .attr("stroke-dashoffset", 0)
-
-
-
-          
-
+    //get the length of the line and then animate
+    let totalLength = path.node().getTotalLength();
+    path
+        .attr("stroke-dasharray", totalLength + " " + totalLength)
+        .attr("stroke-dashoffset", totalLength)
+        .transition()
+          .duration(3000)
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", 0)
         
     //Moving Average over 30 days
     const movingAverageData = movingAverage(consolidateData, 30);                            
@@ -114,30 +110,23 @@ const historicalPriceChart = (data) => {
                               .curve(d3.curveBasis)
                       );
 
-        let mvTotalLength = mvPath.node().getTotalLength();
-        mvPath
-            .attr("stroke-dasharray", mvTotalLength + " " + mvTotalLength)
-            .attr("stroke-dashoffset", mvTotalLength)
-            .transition()
-              .duration(3000)
-              .ease(d3.easeLinear)
-              .attr("stroke-dashoffset", 0)
+    let mvTotalLength = mvPath.node().getTotalLength();
+    mvPath
+        .attr("stroke-dasharray", mvTotalLength + " " + mvTotalLength)
+        .attr("stroke-dashoffset", mvTotalLength)
+        .transition()
+          .duration(3000)
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", 0)
 
-    //display companyName
-    const companyName = document.querySelector('#companyName').textContent
-    svg.append("text")
-        .attr("transform", "translate(0, 0)")
-        .attr("x", 30)
-        .attr("y", 30)
-        .attr("font-size", "30px")
-        .style('font-weight', 500)
-
-        .attr("fill", "white")
-        .text(companyName)
-
+      
     //display last price
     const lastPrice = consolidateData[consolidateData.length -1].closingPrice.toFixed(2);
     d3.select("#last-price").append('text').text(`$${lastPrice}`);
+    
+    //display Company Name
+    const companyName = document.querySelector('#companyName').textContent
+    d3.select("#companyNameInBanner").append('text').text(companyName)
 
     //display last 30 days moving average
     const last30daysMovingaverage = movingAverageData[movingAverageData.length -1].average.toFixed(2);

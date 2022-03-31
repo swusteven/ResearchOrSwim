@@ -78,7 +78,7 @@ nav {
   border-radius: 0 15px 15px 0;
   border: 2px white solid;
   font-size: 20px;
-  height: 45px;
+  height: 46px;
   width: 100px;
   background-color: #152434;
   color: white;
@@ -120,6 +120,7 @@ nav {
 #about {
   display: flex;
   align-items: center;
+  color: lightsalmon;
 }
 
 #myBtn {
@@ -130,14 +131,22 @@ nav {
 #myBtn:hover {
   transform: scale(1.2);
   cursor: pointer;
+  color: lightsalmon;
 }
 
 #companyName {
   display: none;
 }
 
+#companyNameInBanner {
+  color: white;
+  font-weight: 600;
+  padding-left: 10px;
+  font-size: larger;
+}
+
 #analytic-banner {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   height: 80px;
   border: none;
   border-radius: 10px;
@@ -243,7 +252,7 @@ nav {
 }
 
 .lables {
-  margin-top: 20px;
+  margin-top: 15px;
   border-bottom: gray 1px solid;
   border-radius: 10px 10px 0 0;
   background-color: #152434;
@@ -261,10 +270,17 @@ nav {
 #analyst-recommendation {
   border: none;
   background-color: #152434;
-  opacity: 0.7;
   padding: 15px;
   display: flex;
   justify-content: center;
+}
+
+#analytics {
+  height: 300px;
+}
+
+#earnings {
+  background-color: #152434;
 }
 
 #display-right {
@@ -290,7 +306,7 @@ nav {
 #analytics-header-tr th,
 #analyst-recommendation-table > tr th,
 #analyst-recommendation-table > tr td {
-  padding: 10px;
+  padding: 5px;
 }
 
 footer a {

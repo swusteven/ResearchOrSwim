@@ -10,6 +10,7 @@
     <script src="./dist/main.js" defer="defer"></script>
     <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap');</style>
     <title>RESEARCH OR SWIM</title>
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico">
 </head>
 
 
@@ -35,6 +36,8 @@
             </section>
         </nav>
         
+        <div id="companyNameInBanner"></div>
+
         <section id="analytic-banner">
             <div id="anlytic-banner-summary"> 
                 <div id="last-price">
@@ -67,7 +70,7 @@
                 <div class="lables">1-Year Historical Price with 30-days Moving Average</div>
                     <div id="historical-price"></div>                   
                     
-                    <div class="lables">Yearly Historical Earnings - in thousands of dollars</div>
+                    <div class="lables">Yearly Historical Earnings - in thousands of dollars (sandbox data)</div>
                     <div id="tooltip" class="hidden">
                         <p><span id="value">100</span></p>
                     </div>
@@ -82,9 +85,7 @@
                         <table id="analytics-table"></table>
                     </div>
 
-                <div class="lables">Analysts' Recommenations</div>
-                    <div id="analyst-pie-chart"></div>                    
-
+                <div class="lables">Wall Street Analysts' Recommenations</div>
                     <div id="analyst-recommendation">   
                         <table id="analyst-recommendation-table"></table>
                     </div>

@@ -3,13 +3,13 @@ const earningChart = (data) => {
     const year = [];
         
     for (let i = data.length >10 ? 10 : data.length -1; i >=0; i--) {
-        revenue.push((data[i].revenue)); 
+        data[i].revenue ? revenue.push((data[i].revenue)) : revenue.push((data[i].netIncome)); 
         year.push(data[i].year); 
     }   
     
     const svg = d3.select("#earnings").append('svg')
                 .attr('width', 750)
-                .attr('height', 350)
+                .attr('height', 300)
                 
           const margin = 50,
                 width = svg.attr('width') - margin,

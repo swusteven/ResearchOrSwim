@@ -54,6 +54,8 @@ const apiCalls  = async ()=>{
 
             // -- analytics
              analytics(earningData, historicalPriceData, analystRecommendationData)   
+
+           document.querySelector("#ticker-symbol").value = ""
         })
 }
 
@@ -69,7 +71,7 @@ function removeExistingContents(){
         d3.select("#last-price text").remove()
         d3.select("#analyst-buy-percentage text").remove()
         d3.select("#analytic-outcome text").remove()
+        d3.select("#companyNameInBanner text").remove()
 }
-
 
 export default apiCalls

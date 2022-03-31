@@ -1,6 +1,5 @@
 const analystRecommendationChart = (data) => {
     const consolidatedData = [];
-    
     addHeader();
 
     for (let i = 0; i < data.length; i++) {
@@ -13,11 +12,8 @@ const analystRecommendationChart = (data) => {
 
 }
 
-
-
-
 function addHeader(){
-    d3.select("#analyst-recommendation-table").attr('width', 600);
+    d3.select("#analyst-recommendation-table").attr('width', 600).attr('height', 280);
     const header = d3.select("#analyst-recommendation-table").append('tr').attr('class', 'analyst-recommendation-table-header')
 
     header.append('th')
