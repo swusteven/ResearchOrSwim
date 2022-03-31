@@ -16,35 +16,25 @@
 
 <body>
      <main>
-        <nav>
+         <nav>
+            <h1 id="logo"><img src="./dist/logo_trans.png"></h1>
             <section class='company-lookup'>
-                <form action="#">
-                    <label id="ticker-label">
-                        <input id="ticker-symbol" type="text" Placeholder="Search">
-                    </label>
+                <form action="#">    
+                    <input id="ticker-symbol" type="text" Placeholder="Search">
                     <input id="retrieve-button" type="submit" value="Search">
                 </form>
-            
                 <span id="companyName"></span>
             </section>
-
-            <h1 id="logo">
-            <img src="./dist/logo_trans.png" alt="">
-            </h1>
        
             <section id="nav-links">
                 <a href="https://github.com/swusteven"><i class="fa fa-github fa-3x"></i></a>
-                <a href="https://www.linkedin.com/in/steven-wu-cams-29814136/"><i class="fa fa-linkedin-square" style="font-size:40px"></i> </a>
+                <a href="https://www.linkedin.com/in/steven-wu-29814136/"><i class="fa fa-linkedin-square" style="font-size:40px"></i> </a>
             </section>
                 
             <section id='about'>
                 <span id="myBtn">About and Rules</span>
             </section>
-
         </nav>
-
-       
-
         
         <section id="analytic-banner">
             <div id="anlytic-banner-summary"> 
@@ -140,8 +130,7 @@
     <!-- ABoutPage Modal -->
     <div id="aboutPageModal" class="modal">
         <div class="modal-content">
-            <span class="aboutPageclose">&times;</span>
-     
+                
             <br>
             <h2 class="modal-h2">About:</h2>      
             <p>ReserchOrSwim is a stock investing analytics dashboard based on price momentum, earning fundamentals  and Wallstreet sentiments. It simplified your investment research process as it's just simple as just one click away and included buy/sell recommendations.

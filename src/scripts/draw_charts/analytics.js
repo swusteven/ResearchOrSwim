@@ -157,7 +157,7 @@ function movingAverage(consolidateDdata, numberOfPricePoints){
 
 
 function displayInBannerEarning(percent){
-    d3.select("#yoy-earning-growth").append('text').text(percent.toFixed(2));
+    d3.select("#yoy-earning-growth").append('text').text(`${percent.toFixed(2)}%`);
 }
 
 
@@ -166,7 +166,7 @@ function displayInBannerAnalyst(buys){
 }
 
 function displayInBannerOutcome(outcome){
-    d3.select('#analytic-outcome').append('text').text(`${outcome ? "RECOMMENDED!" : "NOT RECOMMENDED!"}`);
+    d3.select('#analytic-outcome').append('text').text(`${outcome ? "STRONGLY RECOMMENDED!" : "NOT RECOMMENDED!"}`);
 }    
 
 export default analytics

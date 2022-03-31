@@ -10,7 +10,7 @@ function autofill(){
     apiCalls();
     
     //display modal
-    modal.style.display = "block";
+    // modal.style.display = "block";
 }
 
 
@@ -44,15 +44,10 @@ window.onclick = function(event) {
 // aboutpage modal
 const aboutPageModal = document.getElementById("aboutPageModal");
 const btn = document.getElementById("myBtn");
-const aboutPagespan = document.getElementsByClassName("aboutPageclose")[0];
 const aboutPageclose_btn = document.getElementsByClassName("about_page_close_btn")[0];
 
 btn.onclick = function() {
   aboutPageModal.style.display = "block";
-}
-
-aboutPagespan.onclick = function() {
-  aboutPageModal.style.display = "none";
 }
 
 aboutPageclose_btn.onclick = function() {
