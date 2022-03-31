@@ -1,11 +1,12 @@
 
 const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
+    
     // covert data
     earningData.then(function(earning){
         const consolidatedEarningData = [];
         const consolidatedHistoricalDate = [];
         const consolidatedAnalystData = [];
-                
+                    
         for (let i = 0; i < earning.financials.length; i++) {
             consolidatedEarningData.push({revenue: earning.financials[i].revenue, year: earning.financials[i].year })        
         };
@@ -35,8 +36,7 @@ const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
 function performAnalytics(earningData, priceData, analystData){
     const a = momentum(priceData);
     const b = fundamentals(earningData);
-    const c = analystRecommendation(analystData);
-    
+    const c = analystRecommendation(analystData);   
     const overall = a && b && c;
 
     return [a, b, c, overall];
@@ -46,18 +46,13 @@ function performAnalytics(earningData, priceData, analystData){
 function momentum(priceData){
     const movingAverageData = movingAverage(priceData, 30)
     let last30DaysAverageincreasing = true;
-
         if (movingAverageData.length >= 30){
-            const mostRecent30days = movingAverageData.slice(movingAverageData.length - 30)    
-                    for (let i = 0; i < mostRecent30days.length -1; i++) {
-                        if (mostRecent30days[i] > mostRecent30days[i+1] ){
-                            last30DaysAverageincreasing = false
-                        }                                     
-                    }
-            } else {
-            last30DaysAverageincreasing = false;
+            const mostRecent30days = movingAverageData.slice(movingAverageData.length - 30)   
+            if (mostRecent30days[0].average > mostRecent30days[mostRecent30days.length - 1].average){            
+                last30DaysAverageincreasing = false
+            }                                     
         }
-
+    
     return last30DaysAverageincreasing
 };
 

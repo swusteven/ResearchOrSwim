@@ -1,6 +1,9 @@
 const earningChart = (data) => {
     const revenue = [];
     const year = [];
+    if (!data){
+        alert("Invalid ticker symbol. Please try again. For example, type appl for Apple")
+    }  
         
     for (let i = data.length >10 ? 10 : data.length -1; i >=0; i--) {
         data[i].revenue ? revenue.push((data[i].revenue)) : revenue.push((data[i].netIncome)); 
