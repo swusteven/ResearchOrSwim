@@ -23,7 +23,7 @@ const apiCalls  = async ()=>{
 
     // latest analyst recommendation trends
     const analysRecEndPoint = `/stock/recommendation?symbol=${ticker}`
-    const analystRecommendation =  fetch(`${apiURL}${analysRecEndPoint}&token=${token}`)
+    const analystRecommendation =  fetch(`${apiURL}${analysRecEndPoint}&token=${key}`)
 
 
     //--- IEXcloud API info

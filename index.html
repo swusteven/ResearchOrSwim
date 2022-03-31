@@ -13,7 +13,6 @@
 </head>
 
 
-
 <body>
      <main>
          <nav>
@@ -58,9 +57,7 @@
 
             <div id="analytic-outcome">
                 <p></p>
-
-            </div>
-             
+            </div>             
         </section>
 
 
@@ -68,8 +65,7 @@
         <section class="display">
             <div id='display-left'> 
                 <div class="lables">1-Year Historical Price with 30-days Moving Average</div>
-                    <div id="historical-price"></div>
-                   
+                    <div id="historical-price"></div>                   
                     
                     <div class="lables">Yearly Historical Earnings - in thousands of dollars</div>
                     <div id="tooltip" class="hidden">
@@ -87,8 +83,7 @@
                     </div>
 
                 <div class="lables">Analysts' Recommenations</div>
-                    <div id="analyst-pie-chart"></div>
-                    
+                    <div id="analyst-pie-chart"></div>                    
 
                     <div id="analyst-recommendation">   
                         <table id="analyst-recommendation-table"></table>
@@ -108,17 +103,19 @@
 
             <br>
             <h2 class="modal-h2">About:</h2>      
-            <p>ReserchOrSwim is a stock investing analytics dashboard based on price momentum, earning fundamentals  and Wallstreet sentiments. It simplified your investment research process as it's just simple as just one click away and included buy/sell recommendations.
-            </p><br>
+            <p>ReserchOrSwim is a stock investing analytics dashboard based on 3 investing principals - price momentum, earning fundamentals and Wall Street sentiments. It simplified your investment research process as it's just simple as just one click away. </p><br>
+            <p>In addition, it included buy/sell analysis based on the aforementioned investing principals.</p>
+                
+            <br>
             <h2 class="modal-h2">Instructions:</h2>
                 <ul>
-                    <li>Enter the stock symbol in the upper left search field</li>
-                    <li>Analytics result will display in the upper right section: Recommended or Not Recommended</li>
+                    <li>Enter the stock symbol in the search field</li>
+                    <li>Review analytics results</li>
                     <li>Search again if you want to check out another company</li>
                 </ul>
           
             <h2 class="modal-h2">Note:</h2>
-            <p>This is a JavaScript and D3.js project to strengthen my technical skills. Sandbox environment data are being used therefore contents in this site is for illustration purposes. </p><br>
+            <p>This is a JavaScript DOM manipulation and D3.js project to strengthen my technical skills. Sandbox environment data are being used therefore contents is for illustration purposes. </p><br>
                 
             <div class="close_btn_wrapper">
                 <button class="close_btn">Get Started</button>
@@ -132,13 +129,27 @@
         <div class="modal-content">
                 
             <br>
-            <h2 class="modal-h2">About:</h2>      
-            <p>ReserchOrSwim is a stock investing analytics dashboard based on price momentum, earning fundamentals  and Wallstreet sentiments. It simplified your investment research process as it's just simple as just one click away and included buy/sell recommendations.
-            </p><br>
-       
+            <h2 class="modal-h2">3 Investing Principals :</h2>      
+            <p>ReserchOrSwim is a stock investing analytics dashboard based on price momentum, earning fundamentals  and Wall Street sentiments:
+            </p>
+            
+            <ul>
+                <li>1-year historical price chart with a 30-days moving average to gauge price momentum.</li>
+                <li>Yearly earnings to gauge earning strength.</li>
+                <li>Wall Street recommendations to gauge sentiments.</li>
+            </ul>
+
+            <h2 class="modal-h2">ResearchOrSwim Recommendations:</h2>
+            <p>In addition, ResearchOrSwim performs in-depth analysis based on below investing principals and rules. A 'buy' recommendation only if that specific stock passed ALL of the below 3 investing principals.                
+                <ul>
+                    <li>Price Momentum: passed only if price moving average from last 30 days is increasing.</li>
+                    <li>Company Earnings: passed only if earning is positive in the last two years and YoY growth was 10% or more.
+                    </li>
+                    <li>Wall Street Analysts Recommendations: passed only if 50% of the analysts recommended Strong Buy or Buy.</li>
+                </ul>
           
             <h2 class="modal-h2">Note:</h2>
-            <p>This is a JavaScript and D3.js project to strengthen my technical skills. Sandbox environment data are being used therefore contents in this site is for illustration purposes. </p><br>
+            <p>This is a JavaScript DOM manipulation and D3.js project to strengthen my technical skills. Sandbox environment data are being used therefore contents is for illustration purposes. </p><br>
                 
             <div class="close_btn_wrapper">
                 <button class="about_page_close_btn">Close</button>

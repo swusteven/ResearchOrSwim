@@ -34,6 +34,9 @@ body {
 main {
   width: 1440px;
   margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
 }
 
 nav {
@@ -51,8 +54,8 @@ nav {
   font-size: 20px;
   border-radius: 15px 0 0 15px;
   border: 2px white solid;
-  height: 50px;
-  width: 500px;
+  height: 40px;
+  width: 550px;
   outline: none;
   background-color: #152434;
   color: white;
@@ -66,6 +69,8 @@ nav {
   background-color: gold;
   cursor: pointer;
   color: black;
+  outline: auto;
+  opacity: 0.8;
 }
 
 #retrieve-button {
@@ -73,7 +78,7 @@ nav {
   border-radius: 0 15px 15px 0;
   border: 2px white solid;
   font-size: 20px;
-  height: 55px;
+  height: 45px;
   width: 100px;
   background-color: #152434;
   color: white;
@@ -85,6 +90,8 @@ nav {
   background-color: gold;
   cursor: pointer;
   color: black;
+  outline: auto;
+  opacity: 0.8;
 }
 
 #logo img {
@@ -369,6 +376,14 @@ footer a {
 }
 
 .close_btn {
+  background-color: greenyellow;
+  width: 150px;
+  height: 50px;
+  font-weight: 600;
+  margin: auto;
+}
+
+.about_page_close_btn {
   background-color: greenyellow;
   width: 150px;
   height: 50px;

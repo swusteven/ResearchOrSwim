@@ -10,7 +10,7 @@ function autofill(){
     apiCalls();
     
     //display modal
-    // modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 
@@ -19,26 +19,24 @@ function autofill(){
 const retrieveButton = document.querySelector("input[id='retrieve-button']");   
 retrieveButton.addEventListener("click", apiCalls);
 
-
-
 //landingpage modal
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
 const close_btn = document.getElementsByClassName("close_btn")[0];
 
-
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
+
 close_btn.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 
 
 // aboutpage modal
@@ -48,11 +46,11 @@ const aboutPageclose_btn = document.getElementsByClassName("about_page_close_btn
 
 btn.onclick = function() {
   aboutPageModal.style.display = "block";
-}
+};
 
 aboutPageclose_btn.onclick = function() {
   aboutPageModal.style.display = "none";
-}
+};
 
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -61,4 +59,4 @@ window.onclick = function(event) {
   if (event.target == aboutPageModal) {    
     aboutPageModal.style.display = "none";
   }
-}
+};
