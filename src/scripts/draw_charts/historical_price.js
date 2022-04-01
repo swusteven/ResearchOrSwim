@@ -124,10 +124,6 @@ const historicalPriceChart = (data) => {
     const lastPrice = consolidateData[consolidateData.length -1].closingPrice.toFixed(2);
     d3.select("#last-price").append('text').text(`$${lastPrice}`);
     
-    //display Company Name
-    const companyName = document.querySelector('#companyName').textContent
-    d3.select("#companyNameInBanner").append('text').text(companyName)
-
     //display last 30 days moving average
     const last30daysMovingaverage = movingAverageData[movingAverageData.length -1].average.toFixed(2);
     d3.select("#last-30-days-moving-average").append('text').text(`$${last30daysMovingaverage}`);

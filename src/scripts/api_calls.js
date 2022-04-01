@@ -36,9 +36,8 @@ const apiCalls  = async ()=>{
     await Promise.all([companyNameAPI, earningAPI, historicalPriceAPI, analystRecommendation]).then(res => res)
         .then(function(responses){    
             //--CompanyName 
-            const cName = document.querySelector("#companyName");
             responses[0].json()
-                    .then((data) => cName.innerHTML = data.companyName); //update companyName
+                    .then((data) => d3.select("#companyNameInBanner").append('text').text(data.companyName)); //update companyName
 
             //--Earning data
             const earningData = responses[1].json()
@@ -72,6 +71,7 @@ function removeExistingContents(){
         d3.select("#analyst-buy-percentage text").remove()
         d3.select("#analytic-outcome text").remove()
         d3.select("#companyNameInBanner text").remove()
+        
 }
 
 export default apiCalls
