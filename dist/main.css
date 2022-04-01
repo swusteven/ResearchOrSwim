@@ -67,9 +67,8 @@ nav {
 }
 
 #ticker-symbol:hover {
-  background-color: gold;
+  /* background-color: gold; */
   cursor: pointer;
-  color: black;
   outline: auto;
   opacity: 0.8;
 }
@@ -93,6 +92,12 @@ nav {
   color: black;
   outline: auto;
   opacity: 0.8;
+  border: 2px white solid;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 #logo img {
@@ -338,13 +343,15 @@ footer a {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  padding-left: 40px;
-  padding-right: 40px;
+  border: 2px solid #888;
+  font-family: "Montserrat", sans-serif;
+  background-color: #12161f;
+  color: white;
+  display: block;
+  width: 50%;
+  letter-spacing: 1px;
 }
 
 /* The Close Button */
@@ -360,17 +367,6 @@ footer a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-
-.modal-content {
-  font-family: "Montserrat", sans-serif;
-  background-color: #12161f;
-  color: white;
-  display: block;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: 1px;
 }
 
 .modal-header {

@@ -109,7 +109,7 @@ function displayAnalytics(results){
     
     //fundamentals
     d3.select('#analytics-table').append('tr').attr('id', "fundamentals-row");
-    d3.select('#fundamentals-row').append('td').html('Earnings(10% YoY)');
+    d3.select('#fundamentals-row').append('td').html('Earnings(Last 2 Yr - 10%+ YoY)');
     d3.select('#fundamentals-row').append('td').html(`${results[1] ? "Passed" : "Failed"}`);
 
      //analyst expectations
