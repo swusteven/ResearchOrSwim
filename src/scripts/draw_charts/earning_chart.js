@@ -6,6 +6,7 @@ const earningChart = (data) => {
     }  
         
     for (let i = data.length >10 ? 10 : data.length -1; i >=0; i--) {
+        debugger
         data[i].revenue ? revenue.push((data[i].revenue)) : revenue.push((data[i].netIncome)); 
         year.push(data[i].year); 
     }   

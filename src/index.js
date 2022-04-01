@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", autofill)
 function autofill(){
     document.querySelector("#ticker-symbol").value = 'AAPL';
     apiCalls();
-    
     //display modal
     modal.style.display = "block";
 }
@@ -16,7 +15,11 @@ function autofill(){
 
 //Set event listener on the search button.
 const retrieveButton = document.querySelector("input[id='retrieve-button']");   
-retrieveButton.addEventListener("click", apiCalls);
+retrieveButton.addEventListener("click", function(e){
+  e.preventDefault()
+  apiCalls();
+})
+
 
 //landingpage modal
 const modal = document.getElementById("myModal");

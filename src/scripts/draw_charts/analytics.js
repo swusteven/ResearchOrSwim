@@ -8,7 +8,12 @@ const analytics =(earningData, historicalPriceData, analystRecommendation)=>{
         const consolidatedAnalystData = [];
                     
         for (let i = 0; i < earning.financials.length; i++) {
-            consolidatedEarningData.push({revenue: earning.financials[i].revenue, year: earning.financials[i].year })        
+            if (earning.financials[i].revenue){
+                consolidatedEarningData.push({revenue: earning.financials[i].revenue, year: earning.financials[i].year })        
+            } else {
+                consolidatedEarningData.push({revenue: earning.financials[i].netIncome, year: earning.financials[i].year })        
+            }
+            
         };
       
         historicalPriceData.then(function(price){
@@ -59,7 +64,6 @@ function momentum(priceData){
 
 function fundamentals(earningData){
     if (earningData.length < 2) return false;
-
     const mostRecent = earningData[0].revenue; 
     const previous = earningData[1].revenue; 
     const percent = (((mostRecent - previous) / previous) * 100);
