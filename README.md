@@ -1,6 +1,6 @@
 # ResearchOrSwim
 
-ReserchOrSwim is a stock investing analytics dashboard based on 3 investing principles - price momentum, earning fundamentals and Wall Street sentiments. It simplified your investment research process as simple as just one click away.
+ReserchOrSwim is a stock analytics dashboard based on 3 investing principles - price momentum, earning fundamentals and Wall Street sentiments. It simplified your investment research process as simple as just one click away.
 
 ---
 
@@ -14,7 +14,7 @@ The ResearchOrSwim dashboard consists of the following features:
 
 - 1-year historical price chart with a 30-days moving average to gauge price momentum.
 - Yearly earnings to gauge earning strength.
-- Wall Street recommendations to gauge sentiments.
+- Wall Street analyst recommendations to gauge sentiments.
 - ResearchOrSwim Recommendations.
   - A 'buy' recommendation only if that specific stock passed ALL of the following 3 investing principles.
     1. Price Momentum: passed only if price moving average from last 30 days is increasing.
